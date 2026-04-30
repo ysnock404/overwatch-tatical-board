@@ -4,7 +4,9 @@ import mapData from "../../data/maps.json";
 
 export const heroes = heroData as Hero[];
 
-export const maps = mapData as GameMap[];
+const disabledMapIds = new Set(["antarctic-peninsula", "thames-district", "powder-keg-mine"]);
+
+export const maps = (mapData as GameMap[]).filter((map) => !disabledMapIds.has(map.id));
 
 export const roleLabels = {
   tank: "Tank",
