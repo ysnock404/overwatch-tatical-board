@@ -1,17 +1,24 @@
 import { NextRequest } from "next/server";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const allowedHosts = new Set(["liquipedia.net"]);
 
-export async function GET(request: NextRequest) {
-  const url = request.nextUrl.searchParams.get("url");
+export async function GET(
+  _request: NextRequest,
+  { params }: { params: Promise<{ encoded: string }> },
+) {
+  const { encoded } = await params;
+  const decoded = decodeUrl(encoded);
 
-  if (!url) {
-    return new Response("Missing url", { status: 400 });
+  if (!decoded) {
+    return new Response("Invalid image id", { status: 400 });
   }
 
   let target: URL;
   try {
-    target = new URL(url);
+    target = new URL(decoded);
   } catch {
     return new Response("Invalid url", { status: 400 });
   }
@@ -21,11 +28,11 @@ export async function GET(request: NextRequest) {
   }
 
   const upstream = await fetch(target, {
+    cache: "no-store",
     headers: {
       "User-Agent": "OverwatchTacticalBoard/0.1 image proxy",
       Accept: "image/avif,image/webp,image/png,image/jpeg,image/*",
     },
-    next: { revalidate: 60 * 60 * 24 * 7 },
   });
 
   if (!upstream.ok || !upstream.body) {
@@ -38,4 +45,13 @@ export async function GET(request: NextRequest) {
       "Cache-Control": "public, max-age=604800, stale-while-revalidate=86400",
     },
   });
+}
+
+function decodeUrl(encoded: string) {
+  if (!/^(?:[0-9a-f]{2})+$/i.test(encoded)) return null;
+  let output = "";
+  for (let index = 0; index < encoded.length; index += 2) {
+    output += String.fromCharCode(Number.parseInt(encoded.slice(index, index + 2), 16));
+  }
+  return output;
 }
