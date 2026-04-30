@@ -164,6 +164,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
   const handleMouseDown = (event: KonvaEventObject<MouseEvent>) => {
     const isBackground = event.target === event.target.getStage();
     if (event.evt.button === 1 || event.evt.button === 2 || spaceDown) {
+      event.evt.preventDefault();
       setIsPanning(true);
       return;
     }
@@ -254,6 +255,10 @@ export function TacticalBoard({ map }: { map: GameMap }) {
       }}
       className="h-full w-full"
       onContextMenu={(event) => event.preventDefault()}
+      onAuxClick={(event) => event.preventDefault()}
+      onMouseDown={(event) => {
+        if (event.button === 1) event.preventDefault();
+      }}
     >
       <Stage
         ref={stageRef}
