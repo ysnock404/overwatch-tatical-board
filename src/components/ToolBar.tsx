@@ -4,17 +4,16 @@ import {
   ArrowUpRight,
   Circle,
   Cursor,
+  IdentificationBadge,
   SquaresFour,
   TextT,
   Trash,
-  UsersThree,
 } from "@phosphor-icons/react";
 import { useBoardStore } from "@/lib/board-store";
 import type { Tool } from "@/lib/types";
 
 const tools: Array<{ id: Tool; label: string; icon: typeof Cursor }> = [
   { id: "select", label: "Select", icon: Cursor },
-  { id: "hero", label: "Add hero", icon: UsersThree },
   { id: "arrow", label: "Arrow", icon: ArrowUpRight },
   { id: "zone", label: "Zone", icon: Circle },
   { id: "text", label: "Text", icon: TextT },
@@ -33,11 +32,13 @@ export function ToolBar() {
   const drawingColor = useBoardStore((state) => state.drawingColor);
   const strokeWidth = useBoardStore((state) => state.strokeWidth);
   const heroTokenSize = useBoardStore((state) => state.heroTokenSize);
+  const showHeroRoles = useBoardStore((state) => state.showHeroRoles);
   const showGrid = useBoardStore((state) => state.showGrid);
   const setTool = useBoardStore((state) => state.setTool);
   const setDrawingColor = useBoardStore((state) => state.setDrawingColor);
   const setStrokeWidth = useBoardStore((state) => state.setStrokeWidth);
   const setHeroTokenSize = useBoardStore((state) => state.setHeroTokenSize);
+  const setShowHeroRoles = useBoardStore((state) => state.setShowHeroRoles);
   const setShowGrid = useBoardStore((state) => state.setShowGrid);
   const deleteSelected = useBoardStore((state) => state.deleteSelected);
 
@@ -97,6 +98,12 @@ export function ToolBar() {
             </button>
           ))}
         </div>
+        <IconButton
+          label={showHeroRoles ? "Hide hero roles" : "Show hero roles"}
+          onClick={() => setShowHeroRoles(!showHeroRoles)}
+          icon={IdentificationBadge}
+          active={showHeroRoles}
+        />
         <IconButton label={showGrid ? "Hide grid" : "Show grid"} onClick={() => setShowGrid(!showGrid)} icon={SquaresFour} active={showGrid} />
       </div>
       <div className="flex shrink-0 items-center gap-2">

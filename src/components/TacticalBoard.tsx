@@ -29,10 +29,10 @@ export function TacticalBoard({ map }: { map: GameMap }) {
   const strategy = useBoardStore((state) => state.strategy);
   const selectedId = useBoardStore((state) => state.selectedId);
   const tool = useBoardStore((state) => state.tool);
-  const team = useBoardStore((state) => state.team);
   const drawingColor = useBoardStore((state) => state.drawingColor);
   const strokeWidth = useBoardStore((state) => state.strokeWidth);
   const heroTokenSize = useBoardStore((state) => state.heroTokenSize);
+  const showHeroRoles = useBoardStore((state) => state.showHeroRoles);
   const showGrid = useBoardStore((state) => state.showGrid);
   const stageScale = useBoardStore((state) => state.stageScale);
   const stageX = useBoardStore((state) => state.stageX);
@@ -171,23 +171,12 @@ export function TacticalBoard({ map }: { map: GameMap }) {
     const point = screenToBoard();
     if (!point) return;
 
-    if (tool === "select" && isBackground) {
+    if (isBackground) {
       setSelectedId(null);
     }
 
     if (tool !== "select" && !isBackground) {
       return;
-    }
-
-    if (tool === "hero") {
-      addObject({
-        id: crypto.randomUUID(),
-        type: "hero",
-        heroId: heroes[0].id,
-        team,
-        x: point.x,
-        y: point.y,
-      });
     }
 
     if (tool === "arrow") {
@@ -291,7 +280,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
               key={object.id}
               object={object}
               selected={selectedId === object.id}
-              canEdit={tool === "select"}
+              canEdit
               snapPoint={snapPoint}
               onSelect={() => setSelectedId(object.id)}
               onUpdate={(patch) => updateObject(object.id, patch)}
@@ -302,7 +291,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
               key={object.id}
               object={object}
               selected={selectedId === object.id}
-              canEdit={tool === "select"}
+              canEdit
               snapPoint={snapPoint}
               onSelect={() => setSelectedId(object.id)}
               onUpdate={(patch) => updateObject(object.id, patch)}
@@ -319,6 +308,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
               object={object}
               selected={selectedId === object.id}
               size={heroTokenSize}
+              showRole={showHeroRoles}
               onSelect={() => setSelectedId(object.id)}
               onRemove={() => deleteObject(object.id)}
               snapPoint={snapPoint}
@@ -332,7 +322,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
               key={object.id}
               object={object}
               selected={selectedId === object.id}
-              canEdit={tool === "select"}
+              canEdit
               snapPoint={snapPoint}
               onSelect={() => setSelectedId(object.id)}
               onUpdate={(patch) => updateObject(object.id, patch)}
@@ -348,6 +338,7 @@ function HeroToken({
   object,
   selected,
   size,
+  showRole,
   onSelect,
   onRemove,
   onMove,
@@ -356,6 +347,7 @@ function HeroToken({
   object: HeroObject;
   selected: boolean;
   size: number;
+  showRole: boolean;
   onSelect: () => void;
   onRemove: () => void;
   onMove: (x: number, y: number) => void;
@@ -365,12 +357,11 @@ function HeroToken({
   const [image] = useCanvasImage(assetUrl(hero?.iconUrl ?? hero?.portraitUrl));
   const border = teamColors[object.team];
   const radius = size / 2;
-  const imageSize = Math.max(24, size - 12);
-  const imageOffset = imageSize / 2;
-  const badgeHeight = Math.max(14, Math.round(size * 0.29));
-  const badgeWidth = Math.max(48, Math.round(size * 0.97));
-  const badgeY = radius - 3;
-  const roleFontSize = Math.max(8, Math.round(size * 0.16));
+  const strokeWidth = selected ? 5 : 4;
+  const badgeHeight = Math.max(13, Math.round(size * 0.24));
+  const badgeWidth = Math.max(42, Math.round(size * 0.86));
+  const badgeY = radius - badgeHeight - strokeWidth;
+  const roleFontSize = Math.max(7, Math.round(size * 0.14));
 
   if (!hero) return null;
 
@@ -393,19 +384,23 @@ function HeroToken({
       }}
       rotation={object.rotation ?? 0}
     >
-      <Circle radius={radius} fill="#ffffff" stroke={selected ? "#facc15" : border} strokeWidth={selected ? 6 : 4} />
-      {image ? <KonvaImage image={image} x={-imageOffset} y={-imageOffset} width={imageSize} height={imageSize} cornerRadius={imageOffset} /> : null}
-      <Rect x={-badgeWidth / 2} y={badgeY} width={badgeWidth} height={badgeHeight} fill={border} cornerRadius={4} />
-      <KonvaText
-        x={-badgeWidth / 2}
-        y={badgeY + Math.max(2, Math.round(badgeHeight * 0.18))}
-        width={badgeWidth}
-        text={roleLabels[hero.role]}
-        align="center"
-        fill="#ffffff"
-        fontSize={roleFontSize}
-        fontStyle="700"
-      />
+      {image ? <KonvaImage image={image} x={-radius} y={-radius} width={size} height={size} cornerRadius={radius} /> : null}
+      <Circle radius={radius} fill="transparent" stroke={selected ? "#facc15" : border} strokeWidth={strokeWidth} />
+      {showRole ? (
+        <>
+          <Rect x={-badgeWidth / 2} y={badgeY} width={badgeWidth} height={badgeHeight} fill={border} cornerRadius={4} opacity={0.92} />
+          <KonvaText
+            x={-badgeWidth / 2}
+            y={badgeY + Math.max(2, Math.round(badgeHeight * 0.18))}
+            width={badgeWidth}
+            text={roleLabels[hero.role]}
+            align="center"
+            fill="#ffffff"
+            fontSize={roleFontSize}
+            fontStyle="700"
+          />
+        </>
+      ) : null}
     </Group>
   );
 }
@@ -448,6 +443,9 @@ function ArrowShape({
         lineJoin="round"
         hitStrokeWidth={24}
         draggable={canEdit}
+        onMouseDown={(event) => {
+          event.cancelBubble = true;
+        }}
         onClick={onSelect}
         onTap={onSelect}
         onDragEnd={(event) => {
@@ -495,8 +493,15 @@ function ZoneShape({
         stroke={object.color}
         strokeWidth={selected ? 5 : 2}
         draggable={canEdit}
+        onMouseDown={(event) => {
+          event.cancelBubble = true;
+        }}
         onClick={onSelect}
         onTap={onSelect}
+        onDragMove={(event) => {
+          const point = snapPoint({ x: event.target.x(), y: event.target.y() });
+          onUpdate({ x: point.x, y: point.y });
+        }}
         onDragEnd={(event) => {
           const point = snapPoint({ x: event.target.x(), y: event.target.y() });
           event.target.position(point);
@@ -544,6 +549,9 @@ function TextNote({
       fill={object.color ?? "#fafafa"}
       padding={10}
       draggable={canEdit}
+      onMouseDown={(event) => {
+        event.cancelBubble = true;
+      }}
       onClick={onSelect}
       onTap={onSelect}
       onDblClick={() => {
@@ -553,6 +561,10 @@ function TextNote({
       onDragEnd={(event) => {
         const point = snapPoint({ x: event.target.x(), y: event.target.y() });
         event.target.position(point);
+        onUpdate({ x: point.x, y: point.y });
+      }}
+      onDragMove={(event) => {
+        const point = snapPoint({ x: event.target.x(), y: event.target.y() });
         onUpdate({ x: point.x, y: point.y });
       }}
       shadowColor="#18181b"

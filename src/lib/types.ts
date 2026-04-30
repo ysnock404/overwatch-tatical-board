@@ -14,7 +14,7 @@ export type MapMode =
 
 export type Team = "blue" | "red";
 
-export type Tool = "select" | "hero" | "arrow" | "zone" | "text";
+export type Tool = "select" | "arrow" | "zone" | "text";
 
 export type Hero = {
   id: string;
