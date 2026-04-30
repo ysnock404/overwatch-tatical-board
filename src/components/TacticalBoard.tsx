@@ -143,8 +143,18 @@ export function TacticalBoard({ map }: { map: GameMap }) {
     const pointer = stage?.getPointerPosition();
     if (!stage || !pointer) return;
 
+    const shouldZoom = event.evt.ctrlKey || event.evt.metaKey || event.evt.altKey;
+    if (!shouldZoom) {
+      setView({
+        scale: stageScale,
+        x: stageX - event.evt.deltaX,
+        y: stageY - event.evt.deltaY,
+      });
+      return;
+    }
+
     const oldScale = stageScale;
-    const scaleBy = 1.06;
+    const scaleBy = Math.abs(event.evt.deltaY) < 10 ? 1.02 : 1.06;
     const nextScale = event.evt.deltaY > 0 ? oldScale / scaleBy : oldScale * scaleBy;
     const clampedScale = Math.min(3, Math.max(0.35, nextScale));
     const mousePointTo = {

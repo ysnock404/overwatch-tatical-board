@@ -76,6 +76,9 @@ export function ToolBar() {
         })}
       </div>
       <div className="flex shrink-0 items-center gap-2 border-l border-zinc-200 pl-3">
+        <span className="hidden font-mono text-[11px] uppercase tracking-[0.14em] text-zinc-500 xl:inline">
+          Two fingers pan / Ctrl zoom
+        </span>
         <div className="flex items-center gap-1">
           {colors.map((color) => (
             <button
