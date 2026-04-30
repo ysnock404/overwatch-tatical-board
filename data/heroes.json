@@ -3,459 +3,561 @@
     "id": "bastion",
     "name": "Bastion",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/5/5b/Bastion_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/5/5b/Bastion_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/bastion.png",
+    "iconUrl": "/assets/liquipedia/heroes/bastion.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Bastion",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/5/5b/Bastion_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/5/5b/Bastion_mini_portrait.png"
   },
   {
     "id": "emre",
     "name": "Emre",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/c/c8/Emre_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/c/c8/Emre_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/emre.png",
+    "iconUrl": "/assets/liquipedia/heroes/emre.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Emre",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/c/c8/Emre_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/c/c8/Emre_mini_portrait.png"
   },
   {
     "id": "junkrat",
     "name": "Junkrat",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/6/68/Junkrat_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/6/68/Junkrat_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/junkrat.png",
+    "iconUrl": "/assets/liquipedia/heroes/junkrat.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Junkrat",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/6/68/Junkrat_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/6/68/Junkrat_OW2_mini_portrait.png"
   },
   {
     "id": "mei",
     "name": "Mei",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/4/46/Mei_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/4/46/Mei_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/mei.png",
+    "iconUrl": "/assets/liquipedia/heroes/mei.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Mei",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/4/46/Mei_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/4/46/Mei_OW2_mini_portrait.png"
   },
   {
     "id": "soldier-76",
     "name": "Soldier: 76",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/3/34/Soldier_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/3/34/Soldier_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/soldier-76.png",
+    "iconUrl": "/assets/liquipedia/heroes/soldier-76.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Soldier%3A_76",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/3/34/Soldier_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/3/34/Soldier_OW2_mini_portrait.png"
   },
   {
     "id": "symmetra",
     "name": "Symmetra",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/a/ae/Symmetra_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/a/ae/Symmetra_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/symmetra.png",
+    "iconUrl": "/assets/liquipedia/heroes/symmetra.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Symmetra",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/a/ae/Symmetra_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/a/ae/Symmetra_OW2_mini_portrait.png"
   },
   {
     "id": "torbjorn",
     "name": "Torbjörn",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/b/b5/Torbjorn_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/b/b5/Torbjorn_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/torbjorn.png",
+    "iconUrl": "/assets/liquipedia/heroes/torbjorn.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Torbj%C3%B6rn",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/b/b5/Torbjorn_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/b/b5/Torbjorn_OW2_mini_portrait.png"
   },
   {
     "id": "ashe",
     "name": "Ashe",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/d/d2/Ashe_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/d/d2/Ashe_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/ashe.png",
+    "iconUrl": "/assets/liquipedia/heroes/ashe.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Ashe",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/d/d2/Ashe_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/d/d2/Ashe_mini_portrait.png"
   },
   {
     "id": "cassidy",
     "name": "Cassidy",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/8/82/Cassidy_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/8/82/Cassidy_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/cassidy.png",
+    "iconUrl": "/assets/liquipedia/heroes/cassidy.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Cassidy",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/8/82/Cassidy_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/8/82/Cassidy_OW2_mini_portrait.png"
   },
   {
     "id": "hanzo",
     "name": "Hanzo",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/4/4d/Hanzo_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/4/4d/Hanzo_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/hanzo.png",
+    "iconUrl": "/assets/liquipedia/heroes/hanzo.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Hanzo",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/4/4d/Hanzo_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/4/4d/Hanzo_mini_portrait.png"
   },
   {
     "id": "sojourn",
     "name": "Sojourn",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/2/27/Sojourn_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/2/27/Sojourn_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/sojourn.png",
+    "iconUrl": "/assets/liquipedia/heroes/sojourn.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Sojourn",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/2/27/Sojourn_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/2/27/Sojourn_mini_portrait.png"
   },
   {
     "id": "widowmaker",
     "name": "Widowmaker",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/e/e8/Widowmaker_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/e/e8/Widowmaker_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/widowmaker.png",
+    "iconUrl": "/assets/liquipedia/heroes/widowmaker.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Widowmaker",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/e/e8/Widowmaker_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/e/e8/Widowmaker_OW2_mini_portrait.png"
   },
   {
     "id": "anran",
     "name": "Anran",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/3/31/Anran_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/3/31/Anran_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/anran.png",
+    "iconUrl": "/assets/liquipedia/heroes/anran.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Anran",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/3/31/Anran_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/3/31/Anran_mini_portrait.png"
   },
   {
     "id": "genji",
     "name": "Genji",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/6/6b/Genji_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/6/6b/Genji_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/genji.png",
+    "iconUrl": "/assets/liquipedia/heroes/genji.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Genji",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/6/6b/Genji_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/6/6b/Genji_OW2_mini_portrait.png"
   },
   {
     "id": "reaper",
     "name": "Reaper",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/a/ac/Reaper_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/a/ac/Reaper_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/reaper.png",
+    "iconUrl": "/assets/liquipedia/heroes/reaper.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Reaper",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/a/ac/Reaper_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/a/ac/Reaper_OW2_mini_portrait.png"
   },
   {
     "id": "tracer",
     "name": "Tracer",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/e/e9/Tracer_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/e/e9/Tracer_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/tracer.png",
+    "iconUrl": "/assets/liquipedia/heroes/tracer.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Tracer",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/e/e9/Tracer_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/e/e9/Tracer_OW2_mini_portrait.png"
   },
   {
     "id": "vendetta",
     "name": "Vendetta",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/b/b5/Vendetta_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/b/b5/Vendetta_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/vendetta.png",
+    "iconUrl": "/assets/liquipedia/heroes/vendetta.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Vendetta",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/b/b5/Vendetta_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/b/b5/Vendetta_mini_portrait.png"
   },
   {
     "id": "venture",
     "name": "Venture",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/2/2f/Venture_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/2/2f/Venture_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/venture.png",
+    "iconUrl": "/assets/liquipedia/heroes/venture.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Venture",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/2/2f/Venture_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/2/2f/Venture_mini_portrait.png"
   },
   {
     "id": "echo",
     "name": "Echo",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/8/87/Echo_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/8/87/Echo_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/echo.png",
+    "iconUrl": "/assets/liquipedia/heroes/echo.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Echo",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/8/87/Echo_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/8/87/Echo_mini_portrait.png"
   },
   {
     "id": "freja",
     "name": "Freja",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/1/19/Freja_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/1/19/Freja_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/freja.png",
+    "iconUrl": "/assets/liquipedia/heroes/freja.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Freja",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/1/19/Freja_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/1/19/Freja_mini_portrait.png"
   },
   {
     "id": "pharah",
     "name": "Pharah",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/5/54/Pharah_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/5/54/Pharah_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/pharah.png",
+    "iconUrl": "/assets/liquipedia/heroes/pharah.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Pharah",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/5/54/Pharah_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/5/54/Pharah_OW2_mini_portrait.png"
   },
   {
     "id": "sierra",
     "name": "Sierra",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/2/24/Sierra_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/2/24/Sierra_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/sierra.png",
+    "iconUrl": "/assets/liquipedia/heroes/sierra.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Sierra",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/2/24/Sierra_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/2/24/Sierra_mini_portrait.png"
   },
   {
     "id": "sombra",
     "name": "Sombra",
     "role": "damage",
-    "portraitUrl": "https://liquipedia.net/commons/images/3/3c/Sombra_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/3/3c/Sombra_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/sombra.png",
+    "iconUrl": "/assets/liquipedia/heroes/sombra.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Sombra",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/3/3c/Sombra_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/3/3c/Sombra_OW2_mini_portrait.png"
   },
   {
     "id": "d-va",
     "name": "D.Va",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/6/6d/D.Va_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/6/6d/D.Va_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/d-va.png",
+    "iconUrl": "/assets/liquipedia/heroes/d-va.png",
     "sourceUrl": "https://liquipedia.net/overwatch/D.Va",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/6/6d/D.Va_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/6/6d/D.Va_OW2_mini_portrait.png"
   },
   {
     "id": "doomfist",
     "name": "Doomfist",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/4/4c/Doomfist_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/4/4c/Doomfist_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/doomfist.png",
+    "iconUrl": "/assets/liquipedia/heroes/doomfist.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Doomfist",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/4/4c/Doomfist_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/4/4c/Doomfist_OW2_mini_portrait.png"
   },
   {
     "id": "hazard",
     "name": "Hazard",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/2/2f/Hazard_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/2/2f/Hazard_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/hazard.png",
+    "iconUrl": "/assets/liquipedia/heroes/hazard.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Hazard",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/2/2f/Hazard_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/2/2f/Hazard_mini_portrait.png"
   },
   {
     "id": "winston",
     "name": "Winston",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/7/7f/Winston_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/7/7f/Winston_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/winston.png",
+    "iconUrl": "/assets/liquipedia/heroes/winston.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Winston",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/7/7f/Winston_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/7/7f/Winston_OW2_mini_portrait.png"
   },
   {
     "id": "wrecking-ball",
     "name": "Wrecking Ball",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/c/c4/Wrecking_Ball_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/c/c4/Wrecking_Ball_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/wrecking-ball.png",
+    "iconUrl": "/assets/liquipedia/heroes/wrecking-ball.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Wrecking_Ball",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/c/c4/Wrecking_Ball_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/c/c4/Wrecking_Ball_OW2_mini_portrait.png"
   },
   {
     "id": "mauga",
     "name": "Mauga",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/9/98/Mauga_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/9/98/Mauga_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/mauga.png",
+    "iconUrl": "/assets/liquipedia/heroes/mauga.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Mauga",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/9/98/Mauga_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/9/98/Mauga_mini_portrait.png"
   },
   {
     "id": "orisa",
     "name": "Orisa",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/4/46/Orisa_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/4/46/Orisa_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/orisa.png",
+    "iconUrl": "/assets/liquipedia/heroes/orisa.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Orisa",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/4/46/Orisa_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/4/46/Orisa_OW2_mini_portrait.png"
   },
   {
     "id": "roadhog",
     "name": "Roadhog",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/2/21/Roadhog_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/2/21/Roadhog_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/roadhog.png",
+    "iconUrl": "/assets/liquipedia/heroes/roadhog.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Roadhog",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/2/21/Roadhog_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/2/21/Roadhog_OW2_mini_portrait.png"
   },
   {
     "id": "zarya",
     "name": "Zarya",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/f/f2/Zarya_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/f/f2/Zarya_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/zarya.png",
+    "iconUrl": "/assets/liquipedia/heroes/zarya.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Zarya",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/f/f2/Zarya_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/f/f2/Zarya_OW2_mini_portrait.png"
   },
   {
     "id": "domina",
     "name": "Domina",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/2/21/Domina_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/2/21/Domina_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/domina.png",
+    "iconUrl": "/assets/liquipedia/heroes/domina.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Domina",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/2/21/Domina_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/2/21/Domina_mini_portrait.png"
   },
   {
     "id": "junker-queen",
     "name": "Junker Queen",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/0/00/Junker_Queen_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/0/00/Junker_Queen_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/junker-queen.png",
+    "iconUrl": "/assets/liquipedia/heroes/junker-queen.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Junker_Queen",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/0/00/Junker_Queen_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/0/00/Junker_Queen_mini_portrait.png"
   },
   {
     "id": "ramattra",
     "name": "Ramattra",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/d/de/Ramattra_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/d/de/Ramattra_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/ramattra.png",
+    "iconUrl": "/assets/liquipedia/heroes/ramattra.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Ramattra",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/d/de/Ramattra_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/d/de/Ramattra_mini_portrait.png"
   },
   {
     "id": "reinhardt",
     "name": "Reinhardt",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/5/53/Reinhardt_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/5/53/Reinhardt_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/reinhardt.png",
+    "iconUrl": "/assets/liquipedia/heroes/reinhardt.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Reinhardt",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/5/53/Reinhardt_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/5/53/Reinhardt_OW2_mini_portrait.png"
   },
   {
     "id": "sigma",
     "name": "Sigma",
     "role": "tank",
-    "portraitUrl": "https://liquipedia.net/commons/images/b/bf/Sigma_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/b/bf/Sigma_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/sigma.png",
+    "iconUrl": "/assets/liquipedia/heroes/sigma.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Sigma",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/b/bf/Sigma_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/b/bf/Sigma_OW2_mini_portrait.png"
   },
   {
     "id": "ana",
     "name": "Ana",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/7/7b/Ana_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/7/7b/Ana_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/ana.png",
+    "iconUrl": "/assets/liquipedia/heroes/ana.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Ana",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/7/7b/Ana_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/7/7b/Ana_OW2_mini_portrait.png"
   },
   {
     "id": "baptiste",
     "name": "Baptiste",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/4/48/Baptiste_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/4/48/Baptiste_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/baptiste.png",
+    "iconUrl": "/assets/liquipedia/heroes/baptiste.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Baptiste",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/4/48/Baptiste_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/4/48/Baptiste_mini_portrait.png"
   },
   {
     "id": "jetpack-cat",
     "name": "Jetpack Cat",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/4/43/Jetpack_Cat_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/4/43/Jetpack_Cat_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/jetpack-cat.png",
+    "iconUrl": "/assets/liquipedia/heroes/jetpack-cat.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Jetpack_Cat",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/4/43/Jetpack_Cat_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/4/43/Jetpack_Cat_mini_portrait.png"
   },
   {
     "id": "lucio",
     "name": "Lúcio",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/c/cd/Lucio_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/c/cd/Lucio_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/lucio.png",
+    "iconUrl": "/assets/liquipedia/heroes/lucio.png",
     "sourceUrl": "https://liquipedia.net/overwatch/L%C3%BAcio",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/c/cd/Lucio_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/c/cd/Lucio_OW2_mini_portrait.png"
   },
   {
     "id": "zenyatta",
     "name": "Zenyatta",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/6/6e/Zenyatta_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/6/6e/Zenyatta_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/zenyatta.png",
+    "iconUrl": "/assets/liquipedia/heroes/zenyatta.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Zenyatta",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/6/6e/Zenyatta_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/6/6e/Zenyatta_OW2_mini_portrait.png"
   },
   {
     "id": "kiriko",
     "name": "Kiriko",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/f/f3/Kiriko_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/f/f3/Kiriko_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/kiriko.png",
+    "iconUrl": "/assets/liquipedia/heroes/kiriko.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Kiriko",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/f/f3/Kiriko_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/f/f3/Kiriko_OW2_mini_portrait.png"
   },
   {
     "id": "lifeweaver",
     "name": "Lifeweaver",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/4/49/Lifeweaver_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/4/49/Lifeweaver_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/lifeweaver.png",
+    "iconUrl": "/assets/liquipedia/heroes/lifeweaver.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Lifeweaver",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/4/49/Lifeweaver_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/4/49/Lifeweaver_mini_portrait.png"
   },
   {
     "id": "mercy",
     "name": "Mercy",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/d/d2/Mercy_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/d/d2/Mercy_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/mercy.png",
+    "iconUrl": "/assets/liquipedia/heroes/mercy.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Mercy",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/d/d2/Mercy_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/d/d2/Mercy_OW2_mini_portrait.png"
   },
   {
     "id": "moira",
     "name": "Moira",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/2/26/Moira_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/2/26/Moira_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/moira.png",
+    "iconUrl": "/assets/liquipedia/heroes/moira.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Moira",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/2/26/Moira_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/2/26/Moira_OW2_mini_portrait.png"
   },
   {
     "id": "brigitte",
     "name": "Brigitte",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/d/d0/Brigitte_OW2_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/d/d0/Brigitte_OW2_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/brigitte.png",
+    "iconUrl": "/assets/liquipedia/heroes/brigitte.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Brigitte",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/d/d0/Brigitte_OW2_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/d/d0/Brigitte_OW2_mini_portrait.png"
   },
   {
     "id": "illari",
     "name": "Illari",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/9/9c/Illari_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/9/9c/Illari_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/illari.png",
+    "iconUrl": "/assets/liquipedia/heroes/illari.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Illari",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/9/9c/Illari_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/9/9c/Illari_mini_portrait.png"
   },
   {
     "id": "juno",
     "name": "Juno",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/6/60/Juno_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/6/60/Juno_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/juno.png",
+    "iconUrl": "/assets/liquipedia/heroes/juno.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Juno",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/6/60/Juno_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/6/60/Juno_mini_portrait.png"
   },
   {
     "id": "mizuki",
     "name": "Mizuki",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/f/f3/Mizuki_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/f/f3/Mizuki_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/mizuki.png",
+    "iconUrl": "/assets/liquipedia/heroes/mizuki.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Mizuki",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/f/f3/Mizuki_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/f/f3/Mizuki_mini_portrait.png"
   },
   {
     "id": "wuyang",
     "name": "Wuyang",
     "role": "support",
-    "portraitUrl": "https://liquipedia.net/commons/images/8/8e/Wuyang_mini_portrait.png",
-    "iconUrl": "https://liquipedia.net/commons/images/8/8e/Wuyang_mini_portrait.png",
+    "portraitUrl": "/assets/liquipedia/heroes/wuyang.png",
+    "iconUrl": "/assets/liquipedia/heroes/wuyang.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Wuyang",
-    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing."
+    "license": "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
+    "remotePortraitUrl": "https://liquipedia.net/commons/images/8/8e/Wuyang_mini_portrait.png",
+    "remoteIconUrl": "https://liquipedia.net/commons/images/8/8e/Wuyang_mini_portrait.png"
   }
 ]
