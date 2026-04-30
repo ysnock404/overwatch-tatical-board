@@ -4,6 +4,7 @@ import { create } from "zustand";
 import type { BoardObject, Strategy, Team, Tool } from "./types";
 
 const boardPrefsCookie = "owtb_board_prefs";
+const boardPrefsStorageKey = "owtb:board-prefs";
 const cookieMaxAge = 60 * 60 * 24 * 365;
 
 type BoardPrefs = {
@@ -34,6 +35,7 @@ type BoardState = {
   showGrid: boolean;
   history: BoardObject[][];
   future: BoardObject[][];
+  hydratePreferences: () => void;
   setStrategy: (strategy: Strategy) => void;
   renameStrategy: (name: string) => void;
   setTool: (tool: Tool) => void;
@@ -82,6 +84,17 @@ const finiteNumber = (value: unknown, fallback: number) => (typeof value === "nu
 const booleanValue = (value: unknown, fallback: boolean) => (typeof value === "boolean" ? value : fallback);
 
 const readBoardPrefs = (): BoardPrefs => {
+  if (typeof window === "undefined") return defaultPrefs;
+
+  const stored = window.localStorage.getItem(boardPrefsStorageKey);
+  if (stored) {
+    try {
+      return normalizePrefs(JSON.parse(stored) as Partial<BoardPrefs>);
+    } catch {
+      window.localStorage.removeItem(boardPrefsStorageKey);
+    }
+  }
+
   if (typeof document === "undefined") return defaultPrefs;
 
   const raw = document.cookie
@@ -92,23 +105,24 @@ const readBoardPrefs = (): BoardPrefs => {
   if (!raw) return defaultPrefs;
 
   try {
-    const parsed = JSON.parse(decodeURIComponent(raw)) as Partial<BoardPrefs>;
-    return {
-      tool: isTool(parsed.tool) ? parsed.tool : defaultPrefs.tool,
-      team: isTeam(parsed.team) ? parsed.team : defaultPrefs.team,
-      stageScale: finiteNumber(parsed.stageScale, defaultPrefs.stageScale),
-      stageX: finiteNumber(parsed.stageX, defaultPrefs.stageX),
-      stageY: finiteNumber(parsed.stageY, defaultPrefs.stageY),
-      drawingColor: typeof parsed.drawingColor === "string" ? parsed.drawingColor : defaultPrefs.drawingColor,
-      strokeWidth: finiteNumber(parsed.strokeWidth, defaultPrefs.strokeWidth),
-      heroTokenSize: finiteNumber(parsed.heroTokenSize, defaultPrefs.heroTokenSize),
-      showHeroRoles: booleanValue(parsed.showHeroRoles, defaultPrefs.showHeroRoles),
-      showGrid: booleanValue(parsed.showGrid, defaultPrefs.showGrid),
-    };
+    return normalizePrefs(JSON.parse(decodeURIComponent(raw)) as Partial<BoardPrefs>);
   } catch {
     return defaultPrefs;
   }
 };
+
+const normalizePrefs = (parsed: Partial<BoardPrefs>): BoardPrefs => ({
+  tool: isTool(parsed.tool) ? parsed.tool : defaultPrefs.tool,
+  team: isTeam(parsed.team) ? parsed.team : defaultPrefs.team,
+  stageScale: finiteNumber(parsed.stageScale, defaultPrefs.stageScale),
+  stageX: finiteNumber(parsed.stageX, defaultPrefs.stageX),
+  stageY: finiteNumber(parsed.stageY, defaultPrefs.stageY),
+  drawingColor: typeof parsed.drawingColor === "string" ? parsed.drawingColor : defaultPrefs.drawingColor,
+  strokeWidth: finiteNumber(parsed.strokeWidth, defaultPrefs.strokeWidth),
+  heroTokenSize: finiteNumber(parsed.heroTokenSize, defaultPrefs.heroTokenSize),
+  showHeroRoles: booleanValue(parsed.showHeroRoles, defaultPrefs.showHeroRoles),
+  showGrid: booleanValue(parsed.showGrid, defaultPrefs.showGrid),
+});
 
 const boardPrefsFromState = (state: BoardState): BoardPrefs => ({
   tool: state.tool,
@@ -124,8 +138,10 @@ const boardPrefsFromState = (state: BoardState): BoardPrefs => ({
 });
 
 const writeBoardPrefs = (prefs: BoardPrefs) => {
-  if (typeof document === "undefined") return;
-  document.cookie = `${boardPrefsCookie}=${encodeURIComponent(JSON.stringify(prefs))}; path=/; max-age=${cookieMaxAge}; SameSite=Lax`;
+  if (typeof window === "undefined") return;
+  const encoded = encodeURIComponent(JSON.stringify(prefs));
+  window.localStorage.setItem(boardPrefsStorageKey, JSON.stringify(prefs));
+  document.cookie = `${boardPrefsCookie}=${encoded}; path=/; max-age=${cookieMaxAge}; SameSite=Lax`;
 };
 
 const persistBoardPrefs = (state: BoardState, patch: Partial<BoardPrefs>) => {
@@ -149,6 +165,22 @@ export const useBoardStore = create<BoardState>((set, get) => ({
   showGrid: initialPrefs.showGrid,
   history: [],
   future: [],
+  hydratePreferences: () => {
+    const prefs = readBoardPrefs();
+    writeBoardPrefs(prefs);
+    set({
+      tool: prefs.tool,
+      team: prefs.team,
+      stageScale: prefs.stageScale,
+      stageX: prefs.stageX,
+      stageY: prefs.stageY,
+      drawingColor: prefs.drawingColor,
+      strokeWidth: prefs.strokeWidth,
+      heroTokenSize: prefs.heroTokenSize,
+      showHeroRoles: prefs.showHeroRoles,
+      showGrid: prefs.showGrid,
+    });
+  },
   setStrategy: (strategy) =>
     set({
       strategy,

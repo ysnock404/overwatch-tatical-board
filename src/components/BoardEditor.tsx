@@ -23,6 +23,7 @@ export default function BoardEditor({ map }: { map: GameMap }) {
   const boardRef = useRef<HTMLDivElement | null>(null);
   const [activeHeroId, setActiveHeroId] = useState<string | null>(null);
   const strategy = useBoardStore((state) => state.strategy);
+  const hydratePreferences = useBoardStore((state) => state.hydratePreferences);
   const setStrategy = useBoardStore((state) => state.setStrategy);
   const addObject = useBoardStore((state) => state.addObject);
   const team = useBoardStore((state) => state.team);
@@ -33,9 +34,17 @@ export default function BoardEditor({ map }: { map: GameMap }) {
   const activeHero = useMemo(() => heroes.find((hero) => hero.id === activeHeroId), [activeHeroId]);
 
   useEffect(() => {
+    hydratePreferences();
+  }, [hydratePreferences]);
+
+  useEffect(() => {
     const saved = loadStrategies(map.id);
     setStrategy(saved[0] ?? createEmptyStrategy(map.id, `${map.name} plan`));
   }, [map.id, map.name, setStrategy]);
+
+  useEffect(() => {
+    if (strategy) saveStrategyToStorage(strategy);
+  }, [strategy]);
 
   const handleDragStart = (event: DragStartEvent) => {
     const heroId = event.active.data.current?.heroId;
