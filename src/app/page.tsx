@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { AppShell } from "@/components/AppShell";
 import { maps, heroes } from "@/lib/mock-data";
+import { assetUrl } from "@/lib/assets";
 
 export default function Home() {
   return (
@@ -29,14 +30,14 @@ export default function Home() {
         <section className="grid gap-4 lg:pl-8">
           <div className="border border-zinc-200 bg-white p-5 shadow-[0_18px_45px_-30px_rgba(24,24,27,0.45)]">
             <div className="flex items-center justify-between border-b border-zinc-200 pb-4">
-              <span className="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">MVP data</span>
+              <span className="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">Liquipedia data</span>
               <span className="text-sm text-zinc-500">{heroes.length} heroes / {maps.length} maps</span>
             </div>
             <div className="mt-5 grid grid-cols-2 gap-3">
               {maps.map((map) => (
                 <Link key={map.id} href={`/board/${map.id}`} className="group border border-zinc-200 bg-zinc-50 p-4 hover:border-zinc-400">
                   <div className="aspect-[4/3] overflow-hidden bg-white">
-                    <img src={map.imageUrl} alt="" className="h-full w-full object-cover" />
+                    <img src={assetUrl(map.imageUrl)} alt="" className="h-full w-full object-cover" />
                   </div>
                   <div className="mt-3 text-sm font-semibold group-hover:text-zinc-600">{map.name}</div>
                 </Link>

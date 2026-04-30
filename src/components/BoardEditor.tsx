@@ -10,6 +10,7 @@ import { LayerPanel } from "./LayerPanel";
 import { StrategySidebar } from "./StrategySidebar";
 import { ToolBar } from "./ToolBar";
 import { heroes } from "@/lib/mock-data";
+import { assetUrl } from "@/lib/assets";
 import { createEmptyStrategy, useBoardStore } from "@/lib/board-store";
 import type { GameMap, HeroObject, Strategy } from "@/lib/types";
 
@@ -84,7 +85,7 @@ export default function BoardEditor({ map }: { map: GameMap }) {
         <DragOverlay>
           {activeHero ? (
             <div className="h-14 w-14 overflow-hidden rounded-full border-2 border-zinc-950 bg-white shadow-xl">
-              <img src={activeHero.iconUrl ?? activeHero.portraitUrl} alt="" className="h-full w-full object-cover" />
+              <img src={assetUrl(activeHero.iconUrl ?? activeHero.portraitUrl)} alt="" className="h-full w-full object-cover" />
             </div>
           ) : null}
         </DragOverlay>

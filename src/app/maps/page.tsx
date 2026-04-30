@@ -5,9 +5,10 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { maps, modeLabels } from "@/lib/mock-data";
+import { assetUrl } from "@/lib/assets";
 import type { MapMode } from "@/lib/types";
 
-const modes: Array<MapMode | "all"> = ["all", "control", "escort", "hybrid", "push", "flashpoint", "clash"];
+const modes: Array<MapMode | "all"> = ["all", ...Object.keys(modeLabels)] as Array<MapMode | "all">;
 
 export default function MapsPage() {
   const [mode, setMode] = useState<MapMode | "all">("all");
@@ -41,7 +42,7 @@ export default function MapsPage() {
           {filtered.map((map) => (
             <article key={map.id} className="border border-zinc-200 bg-white">
               <div className="aspect-[16/10] overflow-hidden bg-zinc-100">
-                <img src={map.imageUrl} alt="" className="h-full w-full object-cover" />
+                <img src={assetUrl(map.imageUrl)} alt="" className="h-full w-full object-cover" />
               </div>
               <div className="p-5">
                 <div className="flex items-start justify-between gap-4">

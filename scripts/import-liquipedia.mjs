@@ -33,98 +33,128 @@ async function liquipedia(params) {
   return response.json();
 }
 
-async function categoryMembers(category) {
-  const pages = [];
-  let cmcontinue;
-
-  do {
-    const data = await liquipedia({
-      action: "query",
-      list: "categorymembers",
-      cmtitle: category,
-      cmlimit: "50",
-      ...(cmcontinue ? { cmcontinue } : {}),
-    });
-    pages.push(...(data.query?.categorymembers ?? []));
-    cmcontinue = data.continue?.cmcontinue;
-  } while (cmcontinue);
-
-  return pages;
-}
-
-async function pageInfo(pageids) {
-  if (pageids.length === 0) return {};
+async function portalWikitext(page) {
   const data = await liquipedia({
-    action: "query",
-    pageids: pageids.join("|"),
-    prop: "info|pageimages",
-    inprop: "url",
-    piprop: "thumbnail|original|name",
-    pithumbsize: "256",
+    action: "parse",
+    page,
+    prop: "wikitext",
   });
 
-  return data.query?.pages ?? {};
+  return data.parse?.wikitext?.["*"] ?? "";
+}
+
+async function imageInfo(fileNames) {
+  const uniqueTitles = [...new Set(fileNames.map((fileName) => `File:${fileName.replace(/^File:/, "")}`))];
+  const result = new Map();
+
+  for (let index = 0; index < uniqueTitles.length; index += 50) {
+    const batch = uniqueTitles.slice(index, index + 50);
+    const data = await liquipedia({
+      action: "query",
+      titles: batch.join("|"),
+      prop: "imageinfo",
+      iiprop: "url|mime",
+      iiurlwidth: "640",
+    });
+    const pages = Object.values(data.query?.pages ?? {});
+    for (const page of pages) {
+      const info = page.imageinfo?.[0];
+      if (page.title && info) {
+        result.set(page.title.replace(/^File:/, ""), {
+          url: info.thumburl ?? info.url,
+          originalUrl: info.url,
+          mime: info.mime,
+        });
+      }
+    }
+  }
+
+  return result;
 }
 
 function slug(title) {
   return title
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[':]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 }
 
-function inferRole(title) {
-  const support = ["ana", "baptiste", "brigitte", "illari", "kiriko", "lifeweaver", "lucio", "mercy", "moira", "zenyatta"];
-  const tank = ["d.va", "doomfist", "junker queen", "mauga", "orisa", "ramattra", "reinhardt", "roadhog", "sigma", "winston", "wrecking ball", "zarya"];
-  const normalized = title.toLowerCase();
-  if (support.some((item) => normalized.includes(item))) return "support";
-  if (tank.some((item) => normalized.includes(item))) return "tank";
-  return "damage";
-}
-
-function inferMode(title) {
-  const normalized = title.toLowerCase();
-  if (normalized.includes("control")) return "control";
-  if (normalized.includes("escort")) return "escort";
-  if (normalized.includes("hybrid")) return "hybrid";
-  if (normalized.includes("push")) return "push";
-  if (normalized.includes("flashpoint")) return "flashpoint";
-  if (normalized.includes("clash")) return "clash";
-  return "control";
-}
-
 async function normalizeHeroes() {
-  const members = await categoryMembers("Category:Heroes");
-  const info = await pageInfo(members.map((page) => page.pageid));
+  const text = await portalWikitext("Portal:Heroes");
+  const rows = [];
+  let role = "damage";
 
-  return members.map((page) => {
-    const details = info[String(page.pageid)] ?? {};
+  for (const line of text.split("\n")) {
+    if (line.includes('<section begin="Damage"')) role = "damage";
+    if (line.includes('<section begin="Tank"')) role = "tank";
+    if (line.includes('<section begin="Support"')) role = "support";
+
+    const match = line.match(/^File:(.+?)\|link=([^|]+)\|/);
+    if (match) {
+      rows.push({
+        fileName: match[1],
+        name: match[2],
+        role,
+      });
+    }
+  }
+
+  const images = await imageInfo(rows.map((row) => row.fileName));
+
+  return rows.map((row) => {
+    const details = images.get(row.fileName);
     return {
-      id: slug(page.title),
-      name: page.title,
-      role: inferRole(page.title),
-      portraitUrl: details.thumbnail?.source ?? "",
-      iconUrl: details.thumbnail?.source ?? "",
-      sourceUrl: details.fullurl ?? `https://liquipedia.net/overwatch/${page.title.replaceAll(" ", "_")}`,
-      license: "See Liquipedia page metadata and source file page.",
+      id: slug(row.name),
+      name: row.name,
+      role: row.role,
+      portraitUrl: details?.url ?? "",
+      iconUrl: details?.url ?? "",
+      sourceUrl: `https://liquipedia.net/overwatch/${encodeURIComponent(row.name.replaceAll(" ", "_"))}`,
+      license: "Source: Liquipedia Overwatch Portal:Heroes. See source page and file metadata for licensing.",
     };
   });
 }
 
 async function normalizeMaps() {
-  const members = await categoryMembers("Category:Maps");
-  const info = await pageInfo(members.map((page) => page.pageid));
+  const text = await portalWikitext("Portal:Maps");
+  const rows = [];
+  let mode = "control";
 
-  return members.map((page) => {
-    const details = info[String(page.pageid)] ?? {};
+  for (const line of text.split("\n")) {
+    const titleMatch = line.match(/<div class="font-title">\[\[(.+?)\]\]<\/div>/);
+    if (titleMatch) {
+      mode = titleMatch[1]
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, "_");
+    }
+
+    const match = line.match(/^(?:File:)?(.+?)\|link=([^|]+)\|/);
+    if (match) {
+      rows.push({
+        fileName: match[1],
+        name: match[2],
+        mode,
+      });
+    }
+  }
+
+  const images = await imageInfo(rows.map((row) => row.fileName));
+
+  return rows.map((row) => {
+    const details = images.get(row.fileName);
     return {
-      id: slug(page.title),
-      name: page.title,
-      mode: inferMode(page.title),
-      imageUrl: details.thumbnail?.source ?? "",
-      sourceUrl: details.fullurl ?? `https://liquipedia.net/overwatch/${page.title.replaceAll(" ", "_")}`,
-      license: "See Liquipedia page metadata and source file page.",
+      id: slug(row.name),
+      name: row.name,
+      mode: row.mode,
+      imageUrl: details?.url ?? "",
+      blueprintUrl: details?.url ?? "",
+      sourceUrl: `https://liquipedia.net/overwatch/${encodeURIComponent(row.name.replaceAll(" ", "_"))}`,
+      license: "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     };
   });
 }

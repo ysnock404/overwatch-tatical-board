@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Arrow, Circle, Group, Image as KonvaImage, Layer, Line, Rect, Stage, Text as KonvaText } from "react-konva";
 import type Konva from "konva";
 import { heroes, roleLabels } from "@/lib/mock-data";
+import { assetUrl } from "@/lib/assets";
 import { useBoardStore } from "@/lib/board-store";
 import type { GameMap, HeroObject } from "@/lib/types";
 
@@ -21,7 +22,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const stageRef = useRef<Konva.Stage | null>(null);
   const [size, setSize] = useState({ width: 1000, height: 700 });
-  const [mapImage] = useCanvasImage(map.blueprintUrl ?? map.imageUrl);
+  const [mapImage] = useCanvasImage(assetUrl(map.blueprintUrl ?? map.imageUrl));
   const [spaceDown, setSpaceDown] = useState(false);
   const [isPanning, setIsPanning] = useState(false);
   const [draftArrow, setDraftArrow] = useState<number[] | null>(null);
@@ -316,7 +317,7 @@ function HeroToken({
   onMove: (x: number, y: number) => void;
 }) {
   const hero = useMemo(() => heroes.find((item) => item.id === object.heroId), [object.heroId]);
-  const [image] = useCanvasImage(hero?.iconUrl ?? hero?.portraitUrl ?? "");
+  const [image] = useCanvasImage(assetUrl(hero?.iconUrl ?? hero?.portraitUrl));
   const border = teamColors[object.team];
 
   if (!hero) return null;

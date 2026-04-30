@@ -4,6 +4,7 @@
 import { useMemo, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { heroes, roleLabels } from "@/lib/mock-data";
+import { assetUrl } from "@/lib/assets";
 import type { HeroRole } from "@/lib/types";
 
 const roles: Array<HeroRole | "all"> = ["all", "tank", "damage", "support"];
@@ -40,7 +41,7 @@ export default function HeroesPage() {
           {filtered.map((hero) => (
             <article key={hero.id} className="border border-zinc-200 bg-white p-4">
               <div className="aspect-square overflow-hidden bg-zinc-100">
-                <img src={hero.portraitUrl} alt="" className="h-full w-full object-cover" />
+                <img src={assetUrl(hero.portraitUrl)} alt="" className="h-full w-full object-cover" />
               </div>
               <h2 className="mt-4 text-sm font-semibold">{hero.name}</h2>
               <p className="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-500">{roleLabels[hero.role]}</p>

@@ -1,6 +1,16 @@
 export type HeroRole = "tank" | "damage" | "support";
 
-export type MapMode = "control" | "escort" | "hybrid" | "push" | "flashpoint" | "clash";
+export type MapMode =
+  | "control"
+  | "escort"
+  | "hybrid"
+  | "push"
+  | "flashpoint"
+  | "clash"
+  | "payload_race"
+  | "arena"
+  | "assault"
+  | "lucioball";
 
 export type Team = "blue" | "red";
 

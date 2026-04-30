@@ -5,6 +5,7 @@ import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
 import { useMemo, useState } from "react";
 import { heroes, roleLabels } from "@/lib/mock-data";
+import { assetUrl } from "@/lib/assets";
 import type { Hero, HeroRole } from "@/lib/types";
 
 const roles: Array<HeroRole | "all"> = ["all", "tank", "damage", "support"];
@@ -55,7 +56,7 @@ function DraggableHero({ hero }: { hero: Hero }) {
       {...attributes}
     >
       <span className="block aspect-square overflow-hidden rounded-md border border-zinc-200 bg-zinc-100 group-hover:border-zinc-400">
-        <img src={hero.iconUrl ?? hero.portraitUrl} alt="" className="h-full w-full object-cover" />
+        <img src={assetUrl(hero.iconUrl ?? hero.portraitUrl)} alt="" className="h-full w-full object-cover" />
       </span>
       <span className="mt-2 block truncate text-xs font-semibold text-zinc-900">{hero.name}</span>
       <span className="block text-[10px] uppercase tracking-[0.14em] text-zinc-500">{roleLabels[hero.role]}</span>
