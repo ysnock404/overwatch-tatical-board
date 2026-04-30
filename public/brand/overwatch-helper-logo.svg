@@ -1,0 +1,33 @@
+<svg width="720" height="220" viewBox="0 0 720 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Overwatch Helper</title>
+  <desc id="desc">Original tactical reticle logo for the Overwatch Tactical Board project.</desc>
+  <rect width="720" height="220" rx="32" fill="#0D1117"/>
+  <rect x="1" y="1" width="718" height="218" rx="31" stroke="#F4F4F5" stroke-opacity=".12" stroke-width="2"/>
+  <path d="M0 170H720" stroke="#F4F4F5" stroke-opacity=".08"/>
+  <path d="M82 44H304" stroke="#F4F4F5" stroke-opacity=".09"/>
+  <path d="M82 176H244" stroke="#F4F4F5" stroke-opacity=".09"/>
+  <g transform="translate(54 34)">
+    <circle cx="76" cy="76" r="64" fill="#161B22"/>
+    <circle cx="76" cy="76" r="64" stroke="#F4F4F5" stroke-opacity=".18" stroke-width="2"/>
+    <circle cx="76" cy="76" r="43" stroke="#F5A524" stroke-width="8" stroke-linecap="round" stroke-dasharray="104 42"/>
+    <path d="M76 26V51" stroke="#F4F4F5" stroke-width="6" stroke-linecap="round"/>
+    <path d="M76 101V126" stroke="#F4F4F5" stroke-width="6" stroke-linecap="round"/>
+    <path d="M26 76H51" stroke="#F4F4F5" stroke-width="6" stroke-linecap="round"/>
+    <path d="M101 76H126" stroke="#F4F4F5" stroke-width="6" stroke-linecap="round"/>
+    <path d="M76 53L96 94H56L76 53Z" fill="#38BDF8"/>
+    <path d="M76 53L96 94H56L76 53Z" stroke="#E0F2FE" stroke-opacity=".65" stroke-width="2"/>
+    <circle cx="76" cy="76" r="7" fill="#F4F4F5"/>
+  </g>
+  <g>
+    <text x="210" y="88" fill="#F4F4F5" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800" letter-spacing="4">OVERWATCH</text>
+    <text x="212" y="134" fill="#A1A1AA" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="12">HELPER</text>
+    <path d="M214 154H494" stroke="#F5A524" stroke-width="4" stroke-linecap="round"/>
+    <path d="M512 154H568" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(596 56)" opacity=".95">
+    <rect x="0" y="0" width="74" height="96" rx="14" fill="#161B22" stroke="#F4F4F5" stroke-opacity=".16" stroke-width="2"/>
+    <path d="M16 26H58M16 48H46M16 70H55" stroke="#F4F4F5" stroke-opacity=".72" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="57" cy="23" r="8" fill="#38BDF8"/>
+    <circle cx="47" cy="70" r="8" fill="#F5A524"/>
+  </g>
+</svg>
