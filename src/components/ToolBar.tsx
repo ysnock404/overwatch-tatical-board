@@ -10,6 +10,8 @@ import {
   Eraser,
   FloppyDisk,
   ImageSquare,
+  Magnet,
+  SquaresFour,
   TextT,
   Trash,
   UsersThree,
@@ -26,12 +28,23 @@ const tools: Array<{ id: Tool; label: string; icon: typeof Cursor }> = [
   { id: "text", label: "Text", icon: TextT },
 ];
 
+const colors = ["#0284c7", "#e11d48", "#f59e0b", "#16a34a", "#f4f4f5"];
+const widths = [3, 5, 8, 12];
+
 export function ToolBar() {
   const tool = useBoardStore((state) => state.tool);
   const team = useBoardStore((state) => state.team);
   const strategy = useBoardStore((state) => state.strategy);
+  const drawingColor = useBoardStore((state) => state.drawingColor);
+  const strokeWidth = useBoardStore((state) => state.strokeWidth);
+  const snapToGrid = useBoardStore((state) => state.snapToGrid);
+  const showGrid = useBoardStore((state) => state.showGrid);
   const setTool = useBoardStore((state) => state.setTool);
   const setTeam = useBoardStore((state) => state.setTeam);
+  const setDrawingColor = useBoardStore((state) => state.setDrawingColor);
+  const setStrokeWidth = useBoardStore((state) => state.setStrokeWidth);
+  const setSnapToGrid = useBoardStore((state) => state.setSnapToGrid);
+  const setShowGrid = useBoardStore((state) => state.setShowGrid);
   const deleteSelected = useBoardStore((state) => state.deleteSelected);
   const duplicateSelected = useBoardStore((state) => state.duplicateSelected);
   const clearObjects = useBoardStore((state) => state.clearObjects);
@@ -44,8 +57,8 @@ export function ToolBar() {
   };
 
   return (
-    <div className="flex h-16 items-center justify-between gap-3 border-b border-zinc-200 bg-white px-4">
-      <div className="flex items-center gap-1">
+    <div className="flex h-16 items-center justify-between gap-3 overflow-x-auto border-b border-zinc-200 bg-white px-4">
+      <div className="flex shrink-0 items-center gap-1">
         {tools.map((item) => {
           const Icon = item.icon;
           return (
@@ -62,7 +75,34 @@ export function ToolBar() {
           );
         })}
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex shrink-0 items-center gap-2 border-l border-zinc-200 pl-3">
+        <div className="flex items-center gap-1">
+          {colors.map((color) => (
+            <button
+              key={color}
+              title={`Color ${color}`}
+              onClick={() => setDrawingColor(color)}
+              className={`h-8 w-8 rounded-md border ${drawingColor === color ? "border-zinc-950" : "border-zinc-200"}`}
+              style={{ backgroundColor: color }}
+            />
+          ))}
+        </div>
+        <select
+          title="Line width"
+          value={strokeWidth}
+          onChange={(event) => setStrokeWidth(Number(event.target.value))}
+          className="h-10 rounded-md border border-zinc-200 bg-white px-2 text-sm font-semibold text-zinc-700"
+        >
+          {widths.map((width) => (
+            <option key={width} value={width}>
+              {width}px
+            </option>
+          ))}
+        </select>
+        <IconButton label={snapToGrid ? "Disable snap" : "Enable snap"} onClick={() => setSnapToGrid(!snapToGrid)} icon={Magnet} active={snapToGrid} />
+        <IconButton label={showGrid ? "Hide grid" : "Show grid"} onClick={() => setShowGrid(!showGrid)} icon={SquaresFour} active={showGrid} />
+      </div>
+      <div className="flex shrink-0 items-center gap-2">
         <button
           onClick={() => setTeam(team === "blue" ? "red" : "blue")}
           className={`rounded-md border px-3 py-2 text-sm font-semibold text-white ${
@@ -96,16 +136,20 @@ function IconButton({
   label,
   onClick,
   icon: Icon,
+  active = false,
 }: {
   label: string;
   onClick: () => void;
   icon: typeof Cursor;
+  active?: boolean;
 }) {
   return (
     <button
       title={label}
       onClick={onClick}
-      className="grid h-10 w-10 place-items-center rounded-md border border-zinc-200 bg-white text-zinc-600 hover:text-zinc-950"
+      className={`grid h-10 w-10 place-items-center rounded-md border ${
+        active ? "border-zinc-950 bg-zinc-950 text-white" : "border-zinc-200 bg-white text-zinc-600 hover:text-zinc-950"
+      }`}
     >
       <Icon size={19} weight="bold" />
     </button>

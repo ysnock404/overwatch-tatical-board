@@ -8,9 +8,10 @@ import type Konva from "konva";
 import { heroes, roleLabels } from "@/lib/mock-data";
 import { assetUrl } from "@/lib/assets";
 import { useBoardStore } from "@/lib/board-store";
-import type { GameMap, HeroObject } from "@/lib/types";
+import type { ArrowObject, GameMap, HeroObject, TextObject, ZoneObject } from "@/lib/types";
 
 const fallbackBoard = { width: 1600, height: 1000 };
+const gridSize = 50;
 const teamColors = {
   blue: "#0369a1",
   red: "#be123c",
@@ -29,6 +30,10 @@ export function TacticalBoard({ map }: { map: GameMap }) {
   const selectedId = useBoardStore((state) => state.selectedId);
   const tool = useBoardStore((state) => state.tool);
   const team = useBoardStore((state) => state.team);
+  const drawingColor = useBoardStore((state) => state.drawingColor);
+  const strokeWidth = useBoardStore((state) => state.strokeWidth);
+  const snapToGrid = useBoardStore((state) => state.snapToGrid);
+  const showGrid = useBoardStore((state) => state.showGrid);
   const stageScale = useBoardStore((state) => state.stageScale);
   const stageX = useBoardStore((state) => state.stageX);
   const stageY = useBoardStore((state) => state.stageY);
@@ -36,6 +41,10 @@ export function TacticalBoard({ map }: { map: GameMap }) {
   const setSelectedId = useBoardStore((state) => state.setSelectedId);
   const addObject = useBoardStore((state) => state.addObject);
   const updateObject = useBoardStore((state) => state.updateObject);
+  const deleteSelected = useBoardStore((state) => state.deleteSelected);
+  const duplicateSelected = useBoardStore((state) => state.duplicateSelected);
+  const undo = useBoardStore((state) => state.undo);
+  const redo = useBoardStore((state) => state.redo);
   const boardSize = useMemo(() => {
     if (!mapImage) return fallbackBoard;
     const maxWidth = 1800;
@@ -60,9 +69,39 @@ export function TacticalBoard({ map }: { map: GameMap }) {
     return () => observer.disconnect();
   }, []);
 
+  const snapPoint = (point: { x: number; y: number }) => {
+    if (!snapToGrid) return point;
+    return {
+      x: Math.round(point.x / gridSize) * gridSize,
+      y: Math.round(point.y / gridSize) * gridSize,
+    };
+  };
+
   useEffect(() => {
+    const isTyping = (target: EventTarget | null) => {
+      if (!(target instanceof HTMLElement)) return false;
+      return ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName) || target.isContentEditable;
+    };
+
     const down = (event: KeyboardEvent) => {
-      if (event.code === "Space") setSpaceDown(true);
+      if (event.code === "Space") {
+        event.preventDefault();
+        setSpaceDown(true);
+      }
+      if (isTyping(event.target)) return;
+      if (event.key === "Backspace" || event.key === "Delete") deleteSelected();
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "d") {
+        event.preventDefault();
+        duplicateSelected();
+      }
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "z" && !event.shiftKey) {
+        event.preventDefault();
+        undo();
+      }
+      if ((event.metaKey || event.ctrlKey) && (event.key.toLowerCase() === "y" || (event.shiftKey && event.key.toLowerCase() === "z"))) {
+        event.preventDefault();
+        redo();
+      }
     };
     const up = (event: KeyboardEvent) => {
       if (event.code === "Space") setSpaceDown(false);
@@ -73,7 +112,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
       window.removeEventListener("keydown", down);
       window.removeEventListener("keyup", up);
     };
-  }, []);
+  }, [deleteSelected, duplicateSelected, redo, undo]);
 
   useEffect(() => {
     const exportPng = () => {
@@ -92,10 +131,10 @@ export function TacticalBoard({ map }: { map: GameMap }) {
     const stage = stageRef.current;
     const pointer = stage?.getPointerPosition();
     if (!pointer) return null;
-    return {
+    return snapPoint({
       x: (pointer.x - stageX) / stageScale,
       y: (pointer.y - stageY) / stageScale,
-    };
+    });
   };
 
   const handleWheel = (event: KonvaEventObject<WheelEvent>) => {
@@ -122,7 +161,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
 
   const handleMouseDown = (event: KonvaEventObject<MouseEvent>) => {
     const isBackground = event.target === event.target.getStage();
-    if (event.evt.button === 2 || spaceDown) {
+    if (event.evt.button === 1 || event.evt.button === 2 || spaceDown) {
       setIsPanning(true);
       return;
     }
@@ -132,6 +171,10 @@ export function TacticalBoard({ map }: { map: GameMap }) {
 
     if (tool === "select" && isBackground) {
       setSelectedId(null);
+    }
+
+    if (tool !== "select" && !isBackground) {
+      return;
     }
 
     if (tool === "hero") {
@@ -156,7 +199,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
         x: point.x,
         y: point.y,
         radius: 96,
-        color: team === "blue" ? "#0284c7" : "#e11d48",
+        color: drawingColor,
         opacity: 0.2,
       });
     }
@@ -170,6 +213,8 @@ export function TacticalBoard({ map }: { map: GameMap }) {
           x: point.x,
           y: point.y,
           text: text.trim(),
+          color: drawingColor,
+          fontSize: 28,
         });
       }
     }
@@ -199,7 +244,8 @@ export function TacticalBoard({ map }: { map: GameMap }) {
           id: crypto.randomUUID(),
           type: "arrow",
           points: draftArrow,
-          color: team === "blue" ? "#0284c7" : "#e11d48",
+          color: drawingColor,
+          strokeWidth,
         });
       }
       setDraftArrow(null);
@@ -235,40 +281,33 @@ export function TacticalBoard({ map }: { map: GameMap }) {
         <Layer listening={false}>
           <Rect x={0} y={0} width={boardSize.width} height={boardSize.height} fill="#18181b" />
           {mapImage ? <KonvaImage image={mapImage} x={0} y={0} width={boardSize.width} height={boardSize.height} /> : null}
-          <BoardGrid width={boardSize.width} height={boardSize.height} />
+          {showGrid ? <BoardGrid width={boardSize.width} height={boardSize.height} /> : null}
         </Layer>
         <Layer>
-          {objects.filter((object) => object.type === "zone").map((object) => (
-            <Circle
+          {objects.filter((object): object is ZoneObject => object.type === "zone").map((object) => (
+            <ZoneShape
               key={object.id}
-              x={object.x}
-              y={object.y}
-              radius={object.radius}
-              fill={object.color}
-              opacity={object.opacity}
-              stroke={object.color}
-              strokeWidth={selectedId === object.id ? 5 : 2}
-              draggable={tool === "select"}
-              onClick={() => setSelectedId(object.id)}
-              onDragEnd={(event) => updateObject(object.id, { x: event.target.x(), y: event.target.y() })}
+              object={object}
+              selected={selectedId === object.id}
+              canEdit={tool === "select"}
+              snapPoint={snapPoint}
+              onSelect={() => setSelectedId(object.id)}
+              onUpdate={(patch) => updateObject(object.id, patch)}
             />
           ))}
-          {objects.filter((object) => object.type === "arrow").map((object) => (
-            <Arrow
+          {objects.filter((object): object is ArrowObject => object.type === "arrow").map((object) => (
+            <ArrowShape
               key={object.id}
-              points={object.points}
-              pointerLength={20}
-              pointerWidth={18}
-              stroke={object.color}
-              fill={object.color}
-              strokeWidth={selectedId === object.id ? 8 : 5}
-              lineCap="round"
-              lineJoin="round"
-              onClick={() => setSelectedId(object.id)}
+              object={object}
+              selected={selectedId === object.id}
+              canEdit={tool === "select"}
+              snapPoint={snapPoint}
+              onSelect={() => setSelectedId(object.id)}
+              onUpdate={(patch) => updateObject(object.id, patch)}
             />
           ))}
           {draftArrow ? (
-            <Arrow points={draftArrow} pointerLength={20} pointerWidth={18} stroke="#f4f4f5" fill="#f4f4f5" strokeWidth={4} dash={[12, 8]} />
+            <Arrow points={draftArrow} pointerLength={20} pointerWidth={18} stroke={drawingColor} fill={drawingColor} strokeWidth={strokeWidth} dash={[12, 8]} />
           ) : null}
         </Layer>
         <Layer>
@@ -278,33 +317,21 @@ export function TacticalBoard({ map }: { map: GameMap }) {
               object={object}
               selected={selectedId === object.id}
               onSelect={() => setSelectedId(object.id)}
+              snapPoint={snapPoint}
               onMove={(x, y) => updateObject(object.id, { x, y })}
             />
           ))}
         </Layer>
         <Layer>
-          {objects.filter((object) => object.type === "text").map((object) => (
-            <KonvaText
+          {objects.filter((object): object is TextObject => object.type === "text").map((object) => (
+            <TextNote
               key={object.id}
-              x={object.x}
-              y={object.y}
-              text={object.text}
-              fontFamily="var(--font-geist-sans)"
-              fontSize={28}
-              fontStyle="700"
-              fill="#fafafa"
-              padding={10}
-              draggable={tool === "select"}
-              onClick={() => setSelectedId(object.id)}
-              onDblClick={() => {
-                const next = window.prompt("Note text", object.text);
-                if (next?.trim()) updateObject(object.id, { text: next.trim() });
-              }}
-              onDragEnd={(event) => updateObject(object.id, { x: event.target.x(), y: event.target.y() })}
-              shadowColor="#18181b"
-              shadowBlur={8}
-              stroke={selectedId === object.id ? "#facc15" : undefined}
-              strokeWidth={selectedId === object.id ? 1 : 0}
+              object={object}
+              selected={selectedId === object.id}
+              canEdit={tool === "select"}
+              snapPoint={snapPoint}
+              onSelect={() => setSelectedId(object.id)}
+              onUpdate={(patch) => updateObject(object.id, patch)}
             />
           ))}
         </Layer>
@@ -318,11 +345,13 @@ function HeroToken({
   selected,
   onSelect,
   onMove,
+  snapPoint,
 }: {
   object: HeroObject;
   selected: boolean;
   onSelect: () => void;
   onMove: (x: number, y: number) => void;
+  snapPoint: (point: { x: number; y: number }) => { x: number; y: number };
 }) {
   const hero = useMemo(() => heroes.find((item) => item.id === object.heroId), [object.heroId]);
   const [image] = useCanvasImage(assetUrl(hero?.iconUrl ?? hero?.portraitUrl));
@@ -337,7 +366,12 @@ function HeroToken({
       draggable
       onClick={onSelect}
       onTap={onSelect}
-      onDragEnd={(event) => onMove(event.target.x(), event.target.y())}
+      onDragEnd={(event) => {
+        const point = snapPoint({ x: event.target.x(), y: event.target.y() });
+        event.target.position(point);
+        onMove(point.x, point.y);
+      }}
+      rotation={object.rotation ?? 0}
     >
       <Circle radius={34} fill="#ffffff" stroke={selected ? "#facc15" : border} strokeWidth={selected ? 6 : 4} />
       {image ? <KonvaImage image={image} x={-28} y={-28} width={56} height={56} cornerRadius={28} /> : null}
@@ -347,13 +381,213 @@ function HeroToken({
   );
 }
 
+function ArrowShape({
+  object,
+  selected,
+  canEdit,
+  snapPoint,
+  onSelect,
+  onUpdate,
+}: {
+  object: ArrowObject;
+  selected: boolean;
+  canEdit: boolean;
+  snapPoint: (point: { x: number; y: number }) => { x: number; y: number };
+  onSelect: () => void;
+  onUpdate: (patch: Partial<ArrowObject>) => void;
+}) {
+  const width = object.strokeWidth ?? 5;
+  const updatePoint = (index: 0 | 1, point: { x: number; y: number }) => {
+    const snapped = snapPoint(point);
+    const next = [...object.points];
+    next[index * 2] = snapped.x;
+    next[index * 2 + 1] = snapped.y;
+    onUpdate({ points: next });
+  };
+
+  return (
+    <Group>
+      <Arrow
+        points={object.points}
+        pointerLength={22}
+        pointerWidth={20}
+        stroke={object.color}
+        fill={object.color}
+        strokeWidth={selected ? width + 3 : width}
+        dash={object.dashed ? [18, 12] : undefined}
+        lineCap="round"
+        lineJoin="round"
+        hitStrokeWidth={24}
+        draggable={canEdit}
+        onClick={onSelect}
+        onTap={onSelect}
+        onDragEnd={(event) => {
+          const dx = event.target.x();
+          const dy = event.target.y();
+          event.target.position({ x: 0, y: 0 });
+          onUpdate({
+            points: object.points.map((value, index) => value + (index % 2 === 0 ? dx : dy)),
+          });
+        }}
+      />
+      {selected ? (
+        <>
+          <ControlHandle x={object.points[0]} y={object.points[1]} color={object.color} onDragMove={(point) => updatePoint(0, point)} />
+          <ControlHandle x={object.points[2]} y={object.points[3]} color={object.color} onDragMove={(point) => updatePoint(1, point)} />
+        </>
+      ) : null}
+    </Group>
+  );
+}
+
+function ZoneShape({
+  object,
+  selected,
+  canEdit,
+  snapPoint,
+  onSelect,
+  onUpdate,
+}: {
+  object: ZoneObject;
+  selected: boolean;
+  canEdit: boolean;
+  snapPoint: (point: { x: number; y: number }) => { x: number; y: number };
+  onSelect: () => void;
+  onUpdate: (patch: Partial<ZoneObject>) => void;
+}) {
+  return (
+    <Group>
+      <Circle
+        x={object.x}
+        y={object.y}
+        radius={object.radius}
+        fill={object.color}
+        opacity={object.opacity}
+        stroke={object.color}
+        strokeWidth={selected ? 5 : 2}
+        draggable={canEdit}
+        onClick={onSelect}
+        onTap={onSelect}
+        onDragEnd={(event) => {
+          const point = snapPoint({ x: event.target.x(), y: event.target.y() });
+          event.target.position(point);
+          onUpdate({ x: point.x, y: point.y });
+        }}
+      />
+      {selected ? (
+        <ControlHandle
+          x={object.x + object.radius}
+          y={object.y}
+          color={object.color}
+          onDragMove={(point) => {
+            const radius = Math.max(16, Math.hypot(point.x - object.x, point.y - object.y));
+            onUpdate({ radius });
+          }}
+        />
+      ) : null}
+    </Group>
+  );
+}
+
+function TextNote({
+  object,
+  selected,
+  canEdit,
+  snapPoint,
+  onSelect,
+  onUpdate,
+}: {
+  object: TextObject;
+  selected: boolean;
+  canEdit: boolean;
+  snapPoint: (point: { x: number; y: number }) => { x: number; y: number };
+  onSelect: () => void;
+  onUpdate: (patch: Partial<TextObject>) => void;
+}) {
+  return (
+    <KonvaText
+      x={object.x}
+      y={object.y}
+      text={object.text}
+      fontFamily="var(--font-geist-sans)"
+      fontSize={object.fontSize ?? 28}
+      fontStyle="700"
+      fill={object.color ?? "#fafafa"}
+      padding={10}
+      draggable={canEdit}
+      onClick={onSelect}
+      onTap={onSelect}
+      onDblClick={() => {
+        const next = window.prompt("Note text", object.text);
+        if (next?.trim()) onUpdate({ text: next.trim() });
+      }}
+      onDragEnd={(event) => {
+        const point = snapPoint({ x: event.target.x(), y: event.target.y() });
+        event.target.position(point);
+        onUpdate({ x: point.x, y: point.y });
+      }}
+      shadowColor="#18181b"
+      shadowBlur={8}
+      stroke={selected ? "#facc15" : undefined}
+      strokeWidth={selected ? 1 : 0}
+    />
+  );
+}
+
+function ControlHandle({
+  x,
+  y,
+  color,
+  onDragMove,
+}: {
+  x: number;
+  y: number;
+  color: string;
+  onDragMove: (point: { x: number; y: number }) => void;
+}) {
+  return (
+    <Circle
+      x={x}
+      y={y}
+      radius={11}
+      fill="#fafafa"
+      stroke={color}
+      strokeWidth={4}
+      draggable
+      onMouseDown={(event) => {
+        event.cancelBubble = true;
+      }}
+      onDragMove={(event) => {
+        event.cancelBubble = true;
+        onDragMove({ x: event.target.x(), y: event.target.y() });
+      }}
+    />
+  );
+}
+
 function BoardGrid({ width, height }: { width: number; height: number }) {
   const lines = [];
-  for (let x = 0; x <= width; x += 100) {
-    lines.push(<Line key={`v-${x}`} points={[x, 0, x, height]} stroke="rgba(255,255,255,0.12)" strokeWidth={1} />);
+  for (let x = 0; x <= width; x += gridSize) {
+    const strong = x % (gridSize * 4) === 0;
+    lines.push(
+      <Line
+        key={`v-${x}`}
+        points={[x, 0, x, height]}
+        stroke={strong ? "rgba(255,255,255,0.18)" : "rgba(255,255,255,0.09)"}
+        strokeWidth={1}
+      />,
+    );
   }
-  for (let y = 0; y <= height; y += 100) {
-    lines.push(<Line key={`h-${y}`} points={[0, y, width, y]} stroke="rgba(255,255,255,0.12)" strokeWidth={1} />);
+  for (let y = 0; y <= height; y += gridSize) {
+    const strong = y % (gridSize * 4) === 0;
+    lines.push(
+      <Line
+        key={`h-${y}`}
+        points={[0, y, width, y]}
+        stroke={strong ? "rgba(255,255,255,0.18)" : "rgba(255,255,255,0.09)"}
+        strokeWidth={1}
+      />,
+    );
   }
   return <>{lines}</>;
 }

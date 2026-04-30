@@ -48,6 +48,8 @@ export type ArrowObject = {
   type: "arrow";
   points: number[];
   color: string;
+  strokeWidth?: number;
+  dashed?: boolean;
 };
 
 export type ZoneObject = {
@@ -66,6 +68,8 @@ export type TextObject = {
   x: number;
   y: number;
   text: string;
+  color?: string;
+  fontSize?: number;
 };
 
 export type BoardObject = HeroObject | ArrowObject | ZoneObject | TextObject;

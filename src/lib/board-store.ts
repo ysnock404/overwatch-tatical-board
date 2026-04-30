@@ -11,6 +11,10 @@ type BoardState = {
   stageScale: number;
   stageX: number;
   stageY: number;
+  drawingColor: string;
+  strokeWidth: number;
+  snapToGrid: boolean;
+  showGrid: boolean;
   history: BoardObject[][];
   future: BoardObject[][];
   setStrategy: (strategy: Strategy) => void;
@@ -19,9 +23,14 @@ type BoardState = {
   setTeam: (team: Team) => void;
   setSelectedId: (id: string | null) => void;
   setView: (view: { x: number; y: number; scale: number }) => void;
+  setDrawingColor: (color: string) => void;
+  setStrokeWidth: (width: number) => void;
+  setSnapToGrid: (enabled: boolean) => void;
+  setShowGrid: (enabled: boolean) => void;
   resetView: () => void;
   addObject: (object: BoardObject) => void;
   updateObject: (id: string, patch: Partial<BoardObject>) => void;
+  updateSelected: (patch: Partial<BoardObject>) => void;
   deleteSelected: () => void;
   duplicateSelected: () => void;
   clearObjects: () => void;
@@ -42,6 +51,10 @@ export const useBoardStore = create<BoardState>((set, get) => ({
   stageScale: 1,
   stageX: 0,
   stageY: 0,
+  drawingColor: "#0284c7",
+  strokeWidth: 5,
+  snapToGrid: false,
+  showGrid: true,
   history: [],
   future: [],
   setStrategy: (strategy) =>
@@ -63,6 +76,10 @@ export const useBoardStore = create<BoardState>((set, get) => ({
   setTeam: (team) => set({ team }),
   setSelectedId: (selectedId) => set({ selectedId }),
   setView: ({ x, y, scale }) => set({ stageX: x, stageY: y, stageScale: scale }),
+  setDrawingColor: (drawingColor) => set({ drawingColor }),
+  setStrokeWidth: (strokeWidth) => set({ strokeWidth }),
+  setSnapToGrid: (snapToGrid) => set({ snapToGrid }),
+  setShowGrid: (showGrid) => set({ showGrid }),
   resetView: () => set({ stageX: 0, stageY: 0, stageScale: 1 }),
   addObject: (object) =>
     set((state) => {
@@ -89,6 +106,11 @@ export const useBoardStore = create<BoardState>((set, get) => ({
         }),
       };
     }),
+  updateSelected: (patch) => {
+    const selectedId = get().selectedId;
+    if (!selectedId) return;
+    get().updateObject(selectedId, patch);
+  },
   deleteSelected: () =>
     set((state) => {
       if (!state.strategy || !state.selectedId) return state;
