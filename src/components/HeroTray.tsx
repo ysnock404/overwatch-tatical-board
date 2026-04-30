@@ -3,15 +3,18 @@
 /* eslint-disable @next/next/no-img-element */
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { heroes, roleLabels } from "@/lib/mock-data";
 import { assetUrl } from "@/lib/assets";
+import { useBoardStore } from "@/lib/board-store";
 import type { Hero, HeroRole } from "@/lib/types";
 
 const roles: Array<HeroRole | "all"> = ["all", "tank", "damage", "support"];
 
-export function HeroTray() {
+export function HeroTray({ onPickHero }: { onPickHero: (heroId: string) => void }) {
   const [role, setRole] = useState<HeroRole | "all">("all");
+  const team = useBoardStore((state) => state.team);
+  const setTeam = useBoardStore((state) => state.setTeam);
   const filtered = useMemo(() => heroes.filter((hero) => role === "all" || hero.role === role), [role]);
 
   return (
@@ -31,27 +34,46 @@ export function HeroTray() {
             </button>
           ))}
         </div>
+        <button
+          onClick={() => setTeam(team === "blue" ? "red" : "blue")}
+          className={`mt-3 w-full rounded-md border px-3 py-2 text-sm font-semibold text-white ${
+            team === "blue" ? "border-sky-700 bg-sky-700" : "border-rose-700 bg-rose-700"
+          }`}
+        >
+          {team === "blue" ? "Blue team" : "Red team"}
+        </button>
       </div>
       <div className="grid flex-1 auto-rows-max grid-cols-2 gap-3 overflow-y-auto p-4">
         {filtered.map((hero) => (
-          <DraggableHero key={hero.id} hero={hero} />
+          <DraggableHero key={hero.id} hero={hero} onPickHero={onPickHero} />
         ))}
       </div>
     </div>
   );
 }
 
-function DraggableHero({ hero }: { hero: Hero }) {
+function DraggableHero({ hero, onPickHero }: { hero: Hero; onPickHero: (heroId: string) => void }) {
+  const draggedRef = useRef(false);
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
     id: `tray-${hero.id}`,
     data: { heroId: hero.id },
   });
+
+  useEffect(() => {
+    if (isDragging) draggedRef.current = true;
+  }, [isDragging]);
 
   return (
     <button
       ref={setNodeRef}
       style={{ transform: CSS.Translate.toString(transform) }}
       className={`group text-left ${isDragging ? "opacity-40" : "opacity-100"}`}
+      onClick={() => {
+        if (!isDragging && !draggedRef.current) onPickHero(hero.id);
+        window.setTimeout(() => {
+          draggedRef.current = false;
+        }, 0);
+      }}
       {...listeners}
       {...attributes}
     >

@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { DndContext, DragEndEvent, DragOverlay, DragStartEvent } from "@dnd-kit/core";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AppShell } from "./AppShell";
+import { BoardActionBar } from "./BoardActionBar";
 import { HeroTray } from "./HeroTray";
 import { LayerPanel } from "./LayerPanel";
 import { StrategySidebar } from "./StrategySidebar";
@@ -64,18 +65,33 @@ export default function BoardEditor({ map }: { map: GameMap }) {
     setActiveHeroId(null);
   };
 
+  const handlePickHero = (heroId: string) => {
+    const boardRect = boardRef.current?.getBoundingClientRect();
+    if (!boardRect) return;
+
+    addObject({
+      id: crypto.randomUUID(),
+      type: "hero",
+      heroId,
+      team,
+      x: (boardRect.width / 2 - stageX) / stageScale,
+      y: (boardRect.height / 2 - stageY) / stageScale,
+    } satisfies HeroObject);
+  };
+
   return (
     <AppShell>
       <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd} onDragCancel={() => setActiveHeroId(null)}>
         <main className="grid min-h-[calc(100dvh-73px)] grid-cols-1 bg-zinc-100 lg:grid-cols-[280px_minmax(0,1fr)_320px]">
           <aside className="border-r border-zinc-200 bg-white">
-            <HeroTray />
+            <HeroTray onPickHero={handlePickHero} />
           </aside>
           <section className="min-w-0">
             <ToolBar />
-            <div ref={boardRef} className="h-[calc(100dvh-137px)] min-h-[520px] overflow-hidden bg-zinc-900">
+            <div ref={boardRef} className="h-[calc(100dvh-191px)] min-h-[520px] overflow-hidden bg-zinc-900">
               {strategy ? <TacticalBoard map={map} /> : null}
             </div>
+            <BoardActionBar />
           </section>
           <aside className="border-l border-zinc-200 bg-white">
             <StrategySidebar mapId={map.id} />

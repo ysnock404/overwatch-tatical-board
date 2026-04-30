@@ -33,7 +33,6 @@ export function TacticalBoard({ map }: { map: GameMap }) {
   const drawingColor = useBoardStore((state) => state.drawingColor);
   const strokeWidth = useBoardStore((state) => state.strokeWidth);
   const heroTokenSize = useBoardStore((state) => state.heroTokenSize);
-  const snapToGrid = useBoardStore((state) => state.snapToGrid);
   const showGrid = useBoardStore((state) => state.showGrid);
   const stageScale = useBoardStore((state) => state.stageScale);
   const stageX = useBoardStore((state) => state.stageX);
@@ -42,8 +41,8 @@ export function TacticalBoard({ map }: { map: GameMap }) {
   const setSelectedId = useBoardStore((state) => state.setSelectedId);
   const addObject = useBoardStore((state) => state.addObject);
   const updateObject = useBoardStore((state) => state.updateObject);
+  const deleteObject = useBoardStore((state) => state.deleteObject);
   const deleteSelected = useBoardStore((state) => state.deleteSelected);
-  const duplicateSelected = useBoardStore((state) => state.duplicateSelected);
   const undo = useBoardStore((state) => state.undo);
   const redo = useBoardStore((state) => state.redo);
   const boardSize = useMemo(() => {
@@ -71,11 +70,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
   }, []);
 
   const snapPoint = (point: { x: number; y: number }) => {
-    if (!snapToGrid) return point;
-    return {
-      x: Math.round(point.x / gridSize) * gridSize,
-      y: Math.round(point.y / gridSize) * gridSize,
-    };
+    return point;
   };
 
   useEffect(() => {
@@ -91,10 +86,6 @@ export function TacticalBoard({ map }: { map: GameMap }) {
       }
       if (isTyping(event.target)) return;
       if (event.key === "Backspace" || event.key === "Delete") deleteSelected();
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "d") {
-        event.preventDefault();
-        duplicateSelected();
-      }
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "z" && !event.shiftKey) {
         event.preventDefault();
         undo();
@@ -113,7 +104,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
       window.removeEventListener("keydown", down);
       window.removeEventListener("keyup", up);
     };
-  }, [deleteSelected, duplicateSelected, redo, undo]);
+  }, [deleteSelected, redo, undo]);
 
   useEffect(() => {
     const exportPng = () => {
@@ -329,6 +320,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
               selected={selectedId === object.id}
               size={heroTokenSize}
               onSelect={() => setSelectedId(object.id)}
+              onRemove={() => deleteObject(object.id)}
               snapPoint={snapPoint}
               onMove={(x, y) => updateObject(object.id, { x, y })}
             />
@@ -357,6 +349,7 @@ function HeroToken({
   selected,
   size,
   onSelect,
+  onRemove,
   onMove,
   snapPoint,
 }: {
@@ -364,6 +357,7 @@ function HeroToken({
   selected: boolean;
   size: number;
   onSelect: () => void;
+  onRemove: () => void;
   onMove: (x: number, y: number) => void;
   snapPoint: (point: { x: number; y: number }) => { x: number; y: number };
 }) {
@@ -387,6 +381,11 @@ function HeroToken({
       draggable
       onClick={onSelect}
       onTap={onSelect}
+      onContextMenu={(event) => {
+        event.evt.preventDefault();
+        event.cancelBubble = true;
+        onRemove();
+      }}
       onDragEnd={(event) => {
         const point = snapPoint({ x: event.target.x(), y: event.target.y() });
         event.target.position(point);

@@ -1,6 +1,6 @@
 "use client";
 
-import { DownloadSimple, FileArrowUp, Files, Plus } from "@phosphor-icons/react";
+import { DownloadSimple, FileArrowUp, Plus } from "@phosphor-icons/react";
 import { useRef, useState } from "react";
 import { createEmptyStrategy, useBoardStore } from "@/lib/board-store";
 import type { Strategy } from "@/lib/types";
@@ -23,20 +23,6 @@ export function StrategySidebar({ mapId }: { mapId: string }) {
 
   const newStrategy = () => {
     setStrategy(createEmptyStrategy(mapId, "New strategy"));
-  };
-
-  const duplicate = () => {
-    if (!strategy) return;
-    const copy = {
-      ...strategy,
-      id: crypto.randomUUID(),
-      name: `${strategy.name} copy`,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    };
-    saveStrategyToStorage(copy);
-    setStrategy(copy);
-    refresh();
   };
 
   const exportJson = () => {
@@ -80,10 +66,6 @@ export function StrategySidebar({ mapId }: { mapId: string }) {
       <div className="mt-4 grid grid-cols-2 gap-2">
         <button onClick={saveCurrent} className="rounded-md bg-zinc-950 px-3 py-2 text-sm font-semibold text-white">
           Save
-        </button>
-        <button onClick={duplicate} className="rounded-md border border-zinc-300 px-3 py-2 text-sm font-semibold">
-          <Files className="mr-2 inline" size={16} weight="bold" />
-          Duplicate
         </button>
         <button onClick={exportJson} className="rounded-md border border-zinc-300 px-3 py-2 text-sm font-semibold">
           <DownloadSimple className="mr-2 inline" size={16} weight="bold" />

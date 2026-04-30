@@ -1,22 +1,14 @@
 "use client";
 
 import {
-  ArrowCounterClockwise,
-  ArrowClockwise,
   ArrowUpRight,
   Circle,
   Cursor,
-  Copy,
-  Eraser,
-  FloppyDisk,
-  ImageSquare,
-  Magnet,
   SquaresFour,
   TextT,
   Trash,
   UsersThree,
 } from "@phosphor-icons/react";
-import { saveStrategyToStorage } from "./BoardEditor";
 import { useBoardStore } from "@/lib/board-store";
 import type { Tool } from "@/lib/types";
 
@@ -38,30 +30,16 @@ const tokenSizes = [
 
 export function ToolBar() {
   const tool = useBoardStore((state) => state.tool);
-  const team = useBoardStore((state) => state.team);
-  const strategy = useBoardStore((state) => state.strategy);
   const drawingColor = useBoardStore((state) => state.drawingColor);
   const strokeWidth = useBoardStore((state) => state.strokeWidth);
   const heroTokenSize = useBoardStore((state) => state.heroTokenSize);
-  const snapToGrid = useBoardStore((state) => state.snapToGrid);
   const showGrid = useBoardStore((state) => state.showGrid);
   const setTool = useBoardStore((state) => state.setTool);
-  const setTeam = useBoardStore((state) => state.setTeam);
   const setDrawingColor = useBoardStore((state) => state.setDrawingColor);
   const setStrokeWidth = useBoardStore((state) => state.setStrokeWidth);
   const setHeroTokenSize = useBoardStore((state) => state.setHeroTokenSize);
-  const setSnapToGrid = useBoardStore((state) => state.setSnapToGrid);
   const setShowGrid = useBoardStore((state) => state.setShowGrid);
   const deleteSelected = useBoardStore((state) => state.deleteSelected);
-  const duplicateSelected = useBoardStore((state) => state.duplicateSelected);
-  const clearObjects = useBoardStore((state) => state.clearObjects);
-  const undo = useBoardStore((state) => state.undo);
-  const redo = useBoardStore((state) => state.redo);
-  const resetView = useBoardStore((state) => state.resetView);
-
-  const exportPng = () => {
-    window.dispatchEvent(new CustomEvent("export-board-png"));
-  };
 
   return (
     <div className="flex h-16 items-center justify-between gap-3 overflow-x-auto border-b border-zinc-200 bg-white px-4">
@@ -83,9 +61,6 @@ export function ToolBar() {
         })}
       </div>
       <div className="flex shrink-0 items-center gap-2 border-l border-zinc-200 pl-3">
-        <span className="hidden font-mono text-[11px] uppercase tracking-[0.14em] text-zinc-500 xl:inline">
-          Two fingers pan / Ctrl zoom
-        </span>
         <div className="flex items-center gap-1">
           {colors.map((color) => (
             <button
@@ -122,34 +97,10 @@ export function ToolBar() {
             </button>
           ))}
         </div>
-        <IconButton label={snapToGrid ? "Disable snap" : "Enable snap"} onClick={() => setSnapToGrid(!snapToGrid)} icon={Magnet} active={snapToGrid} />
         <IconButton label={showGrid ? "Hide grid" : "Show grid"} onClick={() => setShowGrid(!showGrid)} icon={SquaresFour} active={showGrid} />
       </div>
       <div className="flex shrink-0 items-center gap-2">
-        <button
-          onClick={() => setTeam(team === "blue" ? "red" : "blue")}
-          className={`rounded-md border px-3 py-2 text-sm font-semibold text-white ${
-            team === "blue" ? "border-sky-700 bg-sky-700" : "border-rose-700 bg-rose-700"
-          }`}
-        >
-          {team === "blue" ? "Blue team" : "Red team"}
-        </button>
-        <IconButton label="Undo" onClick={undo} icon={ArrowCounterClockwise} />
-        <IconButton label="Redo" onClick={redo} icon={ArrowClockwise} />
-        <IconButton label="Duplicate" onClick={duplicateSelected} icon={Copy} />
         <IconButton label="Delete selected" onClick={deleteSelected} icon={Trash} />
-        <IconButton label="Clear board" onClick={clearObjects} icon={Eraser} />
-        <IconButton label="Reset view" onClick={resetView} icon={ImageSquare} />
-        <button
-          onClick={() => strategy && saveStrategyToStorage(strategy)}
-          className="rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm font-semibold text-zinc-700 hover:border-zinc-500"
-        >
-          <FloppyDisk className="mr-2 inline" size={18} weight="bold" />
-          Save
-        </button>
-        <button onClick={exportPng} className="rounded-md bg-zinc-950 px-3 py-2 text-sm font-semibold text-white hover:bg-zinc-800">
-          Export PNG
-        </button>
       </div>
     </div>
   );
