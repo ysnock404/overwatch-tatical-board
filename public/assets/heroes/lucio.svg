@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="#fef9c3"/>
+  <circle cx="64" cy="58" r="38" fill="#65a30d"/>
+  <path d="M32 43c19-24 45-24 64 0l-13 16H45z" fill="#166534"/>
+  <circle cx="48" cy="62" r="8" fill="#fef08a"/>
+  <circle cx="80" cy="62" r="8" fill="#fef08a"/>
+  <path d="M42 84c14 11 30 11 44 0" fill="none" stroke="#fef08a" stroke-width="7" stroke-linecap="round"/>
+  <text x="64" y="119" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#365314">LUC</text>
+</svg>

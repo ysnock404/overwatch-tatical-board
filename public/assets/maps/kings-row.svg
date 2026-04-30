@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#18181b"/>
+  <path d="M95 440h430V225h270v155h310v170h305v220H980V615H700v150H360V590H95z" fill="#27272a" stroke="#d4d4d8" stroke-width="8"/>
+  <path d="M180 500h305V292h240v155h312v172h290v85H920V545H640v154H422V530H180z" fill="#3f3f46"/>
+  <path d="M152 500h1210" stroke="#f4f4f5" stroke-width="34" stroke-linecap="round" stroke-dasharray="78 42"/>
+  <path d="M523 292v403M795 380v240M1105 550v155" stroke="#a1a1aa" stroke-width="6"/>
+  <circle cx="244" cy="500" r="48" fill="#0f172a" stroke="#38bdf8" stroke-width="8"/>
+  <rect x="1260" y="650" width="115" height="115" fill="#0f172a" stroke="#f43f5e" stroke-width="8"/>
+  <path d="M622 128h255v104H622zm-360 630h245v110H262zm872-330h230v93h-230z" fill="#52525b" stroke="#a1a1aa" stroke-width="5"/>
+  <text x="800" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#e5e7eb">KING'S ROW ROUTE BLUEPRINT</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="#e0f2fe"/>
+  <path d="M27 99 39 22h50l12 77-37 19z" fill="#075985"/>
+  <path d="M41 48h46l-8 28H49z" fill="#bae6fd"/>
+  <circle cx="54" cy="62" r="7" fill="#0f172a"/>
+  <path d="M68 64h15" stroke="#0f172a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M31 96h66" stroke="#38bdf8" stroke-width="8" stroke-linecap="round"/>
+  <text x="64" y="119" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#082f49">ANA</text>
+</svg>

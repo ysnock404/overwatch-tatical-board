@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ilios-well",
+    "name": "Ilios: Well",
+    "mode": "control",
+    "imageUrl": "/assets/maps/ilios-well.svg",
+    "blueprintUrl": "/assets/maps/ilios-well.svg",
+    "sourceUrl": "mock://liquipedia/overwatch/Ilios",
+    "license": "Mock asset for MVP. Replace through npm run import:liquipedia."
+  },
+  {
+    "id": "kings-row",
+    "name": "King's Row",
+    "mode": "hybrid",
+    "imageUrl": "/assets/maps/kings-row.svg",
+    "blueprintUrl": "/assets/maps/kings-row.svg",
+    "sourceUrl": "mock://liquipedia/overwatch/Kings_Row",
+    "license": "Mock asset for MVP. Replace through npm run import:liquipedia."
+  }
+]

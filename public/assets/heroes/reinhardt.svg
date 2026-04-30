@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="#d6d3d1"/>
+  <path d="M18 99 36 25h56l18 74-46 18z" fill="#57534e"/>
+  <path d="M38 46h52l8 39-34 13-34-13z" fill="#a8a29e"/>
+  <path d="M44 56h40l-7 18H51z" fill="#f8fafc"/>
+  <path d="M33 24 52 9l12 21L76 9l19 15-13 17H46z" fill="#78716c"/>
+  <text x="64" y="119" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1c1917">REIN</text>
+</svg>

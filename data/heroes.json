@@ -1,0 +1,20 @@
+[
+  {
+    "id": "reinhardt",
+    "name": "Reinhardt",
+    "role": "tank",
+    "portraitUrl": "/assets/heroes/reinhardt.svg",
+    "iconUrl": "/assets/heroes/reinhardt.svg",
+    "sourceUrl": "mock://liquipedia/overwatch/Reinhardt",
+    "license": "Mock asset for MVP. Replace through npm run import:liquipedia."
+  },
+  {
+    "id": "tracer",
+    "name": "Tracer",
+    "role": "damage",
+    "portraitUrl": "/assets/heroes/tracer.svg",
+    "iconUrl": "/assets/heroes/tracer.svg",
+    "sourceUrl": "mock://liquipedia/overwatch/Tracer",
+    "license": "Mock asset for MVP. Replace through npm run import:liquipedia."
+  }
+]

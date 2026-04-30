@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="#ffedd5"/>
+  <circle cx="64" cy="55" r="37" fill="#f97316"/>
+  <path d="M28 46c18-25 54-25 72 0-18 10-54 10-72 0z" fill="#7c2d12"/>
+  <path d="M39 62h50l-9 21H48z" fill="#bfdbfe"/>
+  <circle cx="64" cy="72" r="13" fill="#38bdf8"/>
+  <path d="M35 94h58l14 24H21z" fill="#78350f"/>
+  <text x="64" y="119" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#431407">TR</text>
+</svg>

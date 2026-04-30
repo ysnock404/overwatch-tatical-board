@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="#ecfccb"/>
+  <path d="M20 92 34 25l30-14 30 14 14 67-44 25z" fill="#d9f99d"/>
+  <path d="M36 49h56L80 79H48z" fill="#18181b"/>
+  <path d="M48 59h32" stroke="#84cc16" stroke-width="8" stroke-linecap="round"/>
+  <path d="M64 11v95M31 94h66" stroke="#65a30d" stroke-width="6" stroke-linecap="round"/>
+  <text x="64" y="119" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#365314">GEN</text>
+</svg>

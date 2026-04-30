@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#1f2933"/>
+  <path d="M0 0h1600v1000H0z" fill="#0f172a"/>
+  <path d="M125 105h1350v790H125z" fill="#1e293b" stroke="#94a3b8" stroke-width="8"/>
+  <circle cx="800" cy="500" r="166" fill="#0f172a" stroke="#e5e7eb" stroke-width="12"/>
+  <circle cx="800" cy="500" r="70" fill="#111827" stroke="#38bdf8" stroke-width="8"/>
+  <path d="M248 213h312v184H248zm792 0h312v184h-312zM248 603h312v184H248zm792 0h312v184h-312z" fill="#334155" stroke="#64748b" stroke-width="6"/>
+  <path d="M560 397h180v80H560zm300 0h180v80H860zM560 523h180v80H560zm300 0h180v80H860z" fill="#475569"/>
+  <path d="M125 500h250m850 0h250M800 105v210m0 370v210" stroke="#e5e7eb" stroke-width="5" stroke-dasharray="18 18"/>
+  <text x="800" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#e5e7eb">ILIOS WELL BLUEPRINT</text>
+</svg>
