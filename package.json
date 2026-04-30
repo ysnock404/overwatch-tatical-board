@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "import:liquipedia": "node scripts/import-liquipedia.mjs && node scripts/cache-liquipedia-assets.mjs",
-    "cache:liquipedia-assets": "node scripts/cache-liquipedia-assets.mjs"
+    "import:liquipedia": "node scripts/import-liquipedia.mjs && node scripts/cache-liquipedia-assets.mjs && node scripts/cache-liquipedia-blueprints.mjs",
+    "cache:liquipedia-assets": "node scripts/cache-liquipedia-assets.mjs",
+    "cache:blueprints": "node scripts/cache-liquipedia-blueprints.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

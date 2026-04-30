@@ -7,63 +7,72 @@
     "blueprintUrl": "/assets/liquipedia/maps/antarctic-peninsula.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Antarctic_Peninsula",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/8/83/Antarctic_Peninsula.jpg/640px-Antarctic_Peninsula.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/8/83/Antarctic_Peninsula.jpg/640px-Antarctic_Peninsula.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/8/83/Antarctic_Peninsula.jpg/640px-Antarctic_Peninsula.jpg"
   },
   {
     "id": "busan",
     "name": "Busan",
     "mode": "control",
     "imageUrl": "/assets/liquipedia/maps/busan.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/busan.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/busan.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Busan",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/a/a1/Busan.jpg/640px-Busan.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/a/a1/Busan.jpg/640px-Busan.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/2/26/Busan_Top_Down_View.jpg/2400px-Busan_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Busan_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "ilios",
     "name": "Ilios",
     "mode": "control",
     "imageUrl": "/assets/liquipedia/maps/ilios.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/ilios.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/ilios.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Ilios",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/4/45/Ilios.jpg/640px-Ilios.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/4/45/Ilios.jpg/640px-Ilios.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/0/0c/Ilios_Top_Down_View.jpg/2400px-Ilios_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Ilios_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "lijiang-tower",
     "name": "Lijiang Tower",
     "mode": "control",
     "imageUrl": "/assets/liquipedia/maps/lijiang-tower.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/lijiang-tower.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/lijiang-tower.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Lijiang_Tower",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/e/e8/Lijiang-tower.jpg/640px-Lijiang-tower.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/e/e8/Lijiang-tower.jpg/640px-Lijiang-tower.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/5/50/Lijiang_Tower_Top_Down_View.jpg/2400px-Lijiang_Tower_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Lijiang_Tower_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "nepal",
     "name": "Nepal",
     "mode": "control",
     "imageUrl": "/assets/liquipedia/maps/nepal.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/nepal.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/nepal.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Nepal",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/c/ca/Nepal.jpg/640px-Nepal.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/c/ca/Nepal.jpg/640px-Nepal.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/7/77/Nepal_Top_Down_View.jpg/2400px-Nepal_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Nepal_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "oasis",
     "name": "Oasis",
     "mode": "control",
     "imageUrl": "/assets/liquipedia/maps/oasis.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/oasis.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/oasis.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Oasis",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/f/fc/Oasis.jpg/640px-Oasis.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/f/fc/Oasis.jpg/640px-Oasis.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/8/8a/Oasis_Top_Down_View.jpg/2400px-Oasis_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Oasis_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "samoa",
@@ -73,8 +82,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/samoa.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Samoa",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/b/b4/Samoa.jpg/640px-Samoa.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/b/b4/Samoa.jpg/640px-Samoa.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/b/b4/Samoa.jpg/640px-Samoa.jpg"
   },
   {
     "id": "gogadoro",
@@ -84,8 +92,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/gogadoro.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Gogadoro",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/a/a9/Gogadoro.jpg/640px-Gogadoro.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/a/a9/Gogadoro.jpg/640px-Gogadoro.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/a/a9/Gogadoro.jpg/640px-Gogadoro.jpg"
   },
   {
     "id": "arena-victoriae",
@@ -95,8 +102,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/arena-victoriae.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Arena_Victoriae",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/d/d7/Arena_Victoriae.jpg/640px-Arena_Victoriae.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/d/d7/Arena_Victoriae.jpg/640px-Arena_Victoriae.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/d/d7/Arena_Victoriae.jpg/640px-Arena_Victoriae.jpg"
   },
   {
     "id": "circuit-royal",
@@ -106,41 +112,46 @@
     "blueprintUrl": "/assets/liquipedia/maps/circuit-royal.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Circuit_Royal",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/a/ad/Monte_Carlo.png/640px-Monte_Carlo.png",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/a/ad/Monte_Carlo.png/640px-Monte_Carlo.png"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/a/ad/Monte_Carlo.png/640px-Monte_Carlo.png"
   },
   {
     "id": "dorado",
     "name": "Dorado",
     "mode": "escort",
     "imageUrl": "/assets/liquipedia/maps/dorado.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/dorado.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/dorado.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Dorado",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/6/6f/Dorado.jpg/640px-Dorado.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/6/6f/Dorado.jpg/640px-Dorado.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/6/62/Dorado_Top_Down_View.jpg/2400px-Dorado_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Dorado_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "havana",
     "name": "Havana",
     "mode": "escort",
     "imageUrl": "/assets/liquipedia/maps/havana.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/havana.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/havana.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Havana",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/d/d5/Havana.jpg/640px-Havana.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/d/d5/Havana.jpg/640px-Havana.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/9/9d/Havana_Top_Down_Map.jpg/2400px-Havana_Top_Down_Map.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Havana_Top_Down_Map.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "junkertown",
     "name": "Junkertown",
     "mode": "escort",
     "imageUrl": "/assets/liquipedia/maps/junkertown.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/junkertown.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/junkertown.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Junkertown",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/e/e3/Junkertown.jpg/640px-Junkertown.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/e/e3/Junkertown.jpg/640px-Junkertown.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/e/e4/Junkertown_Top_Down_View.jpg/2400px-Junkertown_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Junkertown_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "shambali-monastery",
@@ -150,63 +161,72 @@
     "blueprintUrl": "/assets/liquipedia/maps/shambali-monastery.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Shambali_Monastery",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/e/ee/Shambali.jpg/640px-Shambali.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/e/ee/Shambali.jpg/640px-Shambali.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/e/ee/Shambali.jpg/640px-Shambali.jpg"
   },
   {
     "id": "rialto",
     "name": "Rialto",
     "mode": "escort",
     "imageUrl": "/assets/liquipedia/maps/rialto.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/rialto.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/rialto.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Rialto",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/f/ff/Rialto.jpg/640px-Rialto.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/f/ff/Rialto.jpg/640px-Rialto.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/9/9a/Rialto_Top_Down_View.jpg/2400px-Rialto_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Rialto_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "route-66",
     "name": "Route 66",
     "mode": "escort",
     "imageUrl": "/assets/liquipedia/maps/route-66.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/route-66.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/route-66.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Route_66",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/8/85/Route-66.jpg/640px-Route-66.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/8/85/Route-66.jpg/640px-Route-66.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/d/d4/Route_66_Top_Down_View.jpg/2400px-Route_66_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Route_66_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "watchpoint-gibraltar",
     "name": "Watchpoint: Gibraltar",
     "mode": "escort",
     "imageUrl": "/assets/liquipedia/maps/watchpoint-gibraltar.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/watchpoint-gibraltar.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/watchpoint-gibraltar.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Watchpoint%3A_Gibraltar",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/6/60/Watchpoint-gibraltar.jpg/640px-Watchpoint-gibraltar.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/6/60/Watchpoint-gibraltar.jpg/640px-Watchpoint-gibraltar.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/7/73/Watchpoint_Gibraltar_Top_Down_View.jpg/2400px-Watchpoint_Gibraltar_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Watchpoint_Gibraltar_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "new-junk-city",
     "name": "New Junk City",
     "mode": "flashpoint",
     "imageUrl": "/assets/liquipedia/maps/new-junk-city.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/new-junk-city.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/new-junk-city.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/New_Junk_City",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/a/ae/New_Junk_City.jpg/640px-New_Junk_City.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/a/ae/New_Junk_City.jpg/640px-New_Junk_City.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/9/97/New_Junk_City_topdown.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:New_Junk_City_topdown.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "suravasa",
     "name": "Suravasa",
     "mode": "flashpoint",
     "imageUrl": "/assets/liquipedia/maps/suravasa.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/suravasa.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/suravasa.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Suravasa",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/6/6f/Suravasa.jpg/640px-Suravasa.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/6/6f/Suravasa.jpg/640px-Suravasa.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/2/23/Suravasa_topdown.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Suravasa_topdown.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "aatlis",
@@ -216,52 +236,59 @@
     "blueprintUrl": "/assets/liquipedia/maps/aatlis.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Aatlis",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/7/78/Aatlis.jpg/640px-Aatlis.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/7/78/Aatlis.jpg/640px-Aatlis.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/7/78/Aatlis.jpg/640px-Aatlis.jpg"
   },
   {
     "id": "blizzard-world",
     "name": "Blizzard World",
     "mode": "hybrid",
     "imageUrl": "/assets/liquipedia/maps/blizzard-world.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/blizzard-world.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/blizzard-world.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Blizzard_World",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/0/0b/Blizzard-world.jpg/640px-Blizzard-world.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/0/0b/Blizzard-world.jpg/640px-Blizzard-world.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/b/b1/Blizzard_World_Top_Down_View.jpg/2400px-Blizzard_World_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Blizzard_World_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "eichenwalde",
     "name": "Eichenwalde",
     "mode": "hybrid",
     "imageUrl": "/assets/liquipedia/maps/eichenwalde.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/eichenwalde.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/eichenwalde.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Eichenwalde",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/e/e0/Eichenwalde.jpg/640px-Eichenwalde.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/e/e0/Eichenwalde.jpg/640px-Eichenwalde.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/3/38/Eichenwalde_Top_Down_View.jpg/2400px-Eichenwalde_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Eichenwalde_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "hollywood",
     "name": "Hollywood",
     "mode": "hybrid",
     "imageUrl": "/assets/liquipedia/maps/hollywood.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/hollywood.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/hollywood.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Hollywood",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/5/5d/Hollywood.jpg/640px-Hollywood.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/5/5d/Hollywood.jpg/640px-Hollywood.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/0/05/Hollywood_Top_Down_View.jpg/2400px-Hollywood_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Hollywood_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "kings-row",
     "name": "King's Row",
     "mode": "hybrid",
     "imageUrl": "/assets/liquipedia/maps/kings-row.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/kings-row.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/kings-row.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/King's_Row",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/6/6a/Kings-row.jpg/640px-Kings-row.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/6/6a/Kings-row.jpg/640px-Kings-row.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/b/b8/King%27s_Row_Top_Down_View.jpg/2400px-King%27s_Row_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:King%27s_Row_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "midtown",
@@ -271,19 +298,20 @@
     "blueprintUrl": "/assets/liquipedia/maps/midtown.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Midtown",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/e/e1/New_York_City.jpg/640px-New_York_City.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/e/e1/New_York_City.jpg/640px-New_York_City.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/e/e1/New_York_City.jpg/640px-New_York_City.jpg"
   },
   {
     "id": "numbani",
     "name": "Numbani",
     "mode": "hybrid",
     "imageUrl": "/assets/liquipedia/maps/numbani.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/numbani.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/numbani.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Numbani",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/f/f9/Numbani.jpg/640px-Numbani.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/f/f9/Numbani.jpg/640px-Numbani.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/a/a4/Numbani_Top_Down_View.jpg/2400px-Numbani_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Numbani_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "paraiso",
@@ -293,8 +321,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/paraiso.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Para%C3%ADso",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/b/bc/Rio_de_Janeiro.png/640px-Rio_de_Janeiro.png",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/b/bc/Rio_de_Janeiro.png/640px-Rio_de_Janeiro.png"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/b/bc/Rio_de_Janeiro.png/640px-Rio_de_Janeiro.png"
   },
   {
     "id": "colosseo",
@@ -304,8 +331,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/colosseo.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Colosseo",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/8/80/Rome.jpg/640px-Rome.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/8/80/Rome.jpg/640px-Rome.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/8/80/Rome.jpg/640px-Rome.jpg"
   },
   {
     "id": "esperanca",
@@ -315,8 +341,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/esperanca.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Esperan%C3%A7a",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/c/cd/Esperanca.jpg/640px-Esperanca.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/c/cd/Esperanca.jpg/640px-Esperanca.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/c/cd/Esperanca.jpg/640px-Esperanca.jpg"
   },
   {
     "id": "new-queen-street",
@@ -326,8 +351,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/new-queen-street.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/New_Queen_Street",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/9/91/Toronto.jpg/640px-Toronto.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/9/91/Toronto.jpg/640px-Toronto.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/9/91/Toronto.jpg/640px-Toronto.jpg"
   },
   {
     "id": "runasapi",
@@ -337,8 +361,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/runasapi.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Runasapi",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/f/fd/Runasapi.jpg/640px-Runasapi.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/f/fd/Runasapi.jpg/640px-Runasapi.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/f/fd/Runasapi.jpg/640px-Runasapi.jpg"
   },
   {
     "id": "place-lacroix",
@@ -348,8 +371,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/place-lacroix.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Place_Lacroix",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/5/56/Place_Lacroix.jpg/640px-Place_Lacroix.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/5/56/Place_Lacroix.jpg/640px-Place_Lacroix.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/5/56/Place_Lacroix.jpg/640px-Place_Lacroix.jpg"
   },
   {
     "id": "redwood-dam",
@@ -359,8 +381,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/redwood-dam.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Redwood_Dam",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/4/46/Redwood_Dam.jpg/640px-Redwood_Dam.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/4/46/Redwood_Dam.jpg/640px-Redwood_Dam.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/4/46/Redwood_Dam.jpg/640px-Redwood_Dam.jpg"
   },
   {
     "id": "hanaoka",
@@ -370,8 +391,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/hanaoka.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Hanaoka",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/f/f6/Hanaoka.jpg/640px-Hanaoka.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/f/f6/Hanaoka.jpg/640px-Hanaoka.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/f/f6/Hanaoka.jpg/640px-Hanaoka.jpg"
   },
   {
     "id": "throne-of-anubis",
@@ -381,8 +401,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/throne-of-anubis.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Throne_of_Anubis",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/9/9f/Throne_of_Anubis.jpg/640px-Throne_of_Anubis.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/9/9f/Throne_of_Anubis.jpg/640px-Throne_of_Anubis.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/9/9f/Throne_of_Anubis.jpg/640px-Throne_of_Anubis.jpg"
   },
   {
     "id": "thames-district",
@@ -392,8 +411,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/thames-district.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Thames_District",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/7/7f/Overwatch_2_full_lightmode.png/640px-Overwatch_2_full_lightmode.png",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/7/7f/Overwatch_2_full_lightmode.png/640px-Overwatch_2_full_lightmode.png"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/7/7f/Overwatch_2_full_lightmode.png/640px-Overwatch_2_full_lightmode.png"
   },
   {
     "id": "powder-keg-mine",
@@ -403,8 +421,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/powder-keg-mine.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Powder_Keg_Mine",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/7/7f/Overwatch_2_full_lightmode.png/640px-Overwatch_2_full_lightmode.png",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/7/7f/Overwatch_2_full_lightmode.png/640px-Overwatch_2_full_lightmode.png"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/7/7f/Overwatch_2_full_lightmode.png/640px-Overwatch_2_full_lightmode.png"
   },
   {
     "id": "ayutthaya",
@@ -414,8 +431,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/ayutthaya.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Ayutthaya",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/9/9b/Ayutthaya.jpg/640px-Ayutthaya.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/9/9b/Ayutthaya.jpg/640px-Ayutthaya.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/9/9b/Ayutthaya.jpg/640px-Ayutthaya.jpg"
   },
   {
     "id": "black-forest",
@@ -425,8 +441,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/black-forest.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Black_Forest",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/2/23/Black-forest.jpg/640px-Black-forest.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/2/23/Black-forest.jpg/640px-Black-forest.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/2/23/Black-forest.jpg/640px-Black-forest.jpg"
   },
   {
     "id": "castillo",
@@ -436,8 +451,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/castillo.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Castillo",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/e/e8/Castillo.jpg/640px-Castillo.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/e/e8/Castillo.jpg/640px-Castillo.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/e/e8/Castillo.jpg/640px-Castillo.jpg"
   },
   {
     "id": "chateau-guillard",
@@ -447,8 +461,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/chateau-guillard.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Ch%C3%A2teau_Guillard",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/6/64/Chateau-guillard.jpg/640px-Chateau-guillard.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/6/64/Chateau-guillard.jpg/640px-Chateau-guillard.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/6/64/Chateau-guillard.jpg/640px-Chateau-guillard.jpg"
   },
   {
     "id": "ecopoint-antarctica",
@@ -458,8 +471,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/ecopoint-antarctica.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Ecopoint%3A_Antarctica",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/2/24/Ecopoint-antarctica.jpg/640px-Ecopoint-antarctica.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/2/24/Ecopoint-antarctica.jpg/640px-Ecopoint-antarctica.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/2/24/Ecopoint-antarctica.jpg/640px-Ecopoint-antarctica.jpg"
   },
   {
     "id": "kanezaka",
@@ -469,8 +481,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/kanezaka.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Kanezaka",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/f/f7/Kanezaka.jpg/640px-Kanezaka.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/f/f7/Kanezaka.jpg/640px-Kanezaka.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/f/f7/Kanezaka.jpg/640px-Kanezaka.jpg"
   },
   {
     "id": "malevento",
@@ -480,8 +491,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/malevento.jpeg",
     "sourceUrl": "https://liquipedia.net/overwatch/Malevento",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/0/00/Malevento.jpeg/640px-Malevento.jpeg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/0/00/Malevento.jpeg/640px-Malevento.jpeg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/0/00/Malevento.jpeg/640px-Malevento.jpeg"
   },
   {
     "id": "necropolis",
@@ -491,8 +501,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/necropolis.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Necropolis",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/6/69/Necropolis.jpg/640px-Necropolis.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/6/69/Necropolis.jpg/640px-Necropolis.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/6/69/Necropolis.jpg/640px-Necropolis.jpg"
   },
   {
     "id": "petra",
@@ -502,63 +511,72 @@
     "blueprintUrl": "/assets/liquipedia/maps/petra.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Petra",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/1/18/Petra.jpg/640px-Petra.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/1/18/Petra.jpg/640px-Petra.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/1/18/Petra.jpg/640px-Petra.jpg"
   },
   {
     "id": "hanamura",
     "name": "Hanamura",
     "mode": "assault",
     "imageUrl": "/assets/liquipedia/maps/hanamura.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/hanamura.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/hanamura.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Hanamura",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/b/b7/Hanamura.jpg/640px-Hanamura.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/b/b7/Hanamura.jpg/640px-Hanamura.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/0/07/Hanamura_Top_Down_View.jpg/2400px-Hanamura_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Hanamura_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "horizon-lunar-colony",
     "name": "Horizon Lunar Colony",
     "mode": "assault",
     "imageUrl": "/assets/liquipedia/maps/horizon-lunar-colony.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/horizon-lunar-colony.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/horizon-lunar-colony.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Horizon_Lunar_Colony",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/7/7d/Horizon-lunar-colony.jpg/640px-Horizon-lunar-colony.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/7/7d/Horizon-lunar-colony.jpg/640px-Horizon-lunar-colony.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/6/6c/Horizon_Lunar_Colony_Top_Down_View.jpg/2400px-Horizon_Lunar_Colony_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Horizon_Lunar_Colony_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "paris",
     "name": "Paris",
     "mode": "assault",
     "imageUrl": "/assets/liquipedia/maps/paris.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/paris.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/paris.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Paris",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/8/89/Paris.jpg/640px-Paris.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/8/89/Paris.jpg/640px-Paris.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/f/f5/Paris_Top_Down_View.jpg/2400px-Paris_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Paris_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "temple-of-anubis",
     "name": "Temple of Anubis",
     "mode": "assault",
     "imageUrl": "/assets/liquipedia/maps/temple-of-anubis.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/temple-of-anubis.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/temple-of-anubis.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Temple_of_Anubis",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/9/96/Temple-of-anubis.jpg/640px-Temple-of-anubis.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/9/96/Temple-of-anubis.jpg/640px-Temple-of-anubis.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/7/70/Temple_of_Anubis_Top_Down_View.jpg/2400px-Temple_of_Anubis_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Temple_of_Anubis_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "volskaya-industries",
     "name": "Volskaya Industries",
     "mode": "assault",
     "imageUrl": "/assets/liquipedia/maps/volskaya-industries.jpg",
-    "blueprintUrl": "/assets/liquipedia/maps/volskaya-industries.jpg",
+    "blueprintUrl": "/assets/blueprints/liquipedia/volskaya-industries.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Volskaya_Industries",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
     "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/a/a8/Volskaya-industries.jpg/640px-Volskaya-industries.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/a/a8/Volskaya-industries.jpg/640px-Volskaya-industries.jpg"
+    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/7/74/Volskaya_Industries_Top_Down_View.jpg/2400px-Volskaya_Industries_Top_Down_View.jpg",
+    "blueprintSourceUrl": "https://liquipedia.net/commons/File:Volskaya_Industries_Top_Down_View.jpg",
+    "blueprintCredit": "Top-down view from Liquipedia Commons."
   },
   {
     "id": "busan-stadium",
@@ -568,8 +586,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/busan-stadium.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Busan_Stadium",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/7/72/Busan_Stadium.png/640px-Busan_Stadium.png",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/7/72/Busan_Stadium.png/640px-Busan_Stadium.png"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/7/72/Busan_Stadium.png/640px-Busan_Stadium.png"
   },
   {
     "id": "estadio-das-ras",
@@ -579,8 +596,7 @@
     "blueprintUrl": "/assets/liquipedia/maps/estadio-das-ras.jpg",
     "sourceUrl": "https://liquipedia.net/overwatch/Est%C3%A1dio_das_R%C3%A3s",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/6/67/Est%C3%A1dio_das_R%C3%A3s.jpg/640px-Est%C3%A1dio_das_R%C3%A3s.jpg",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/6/67/Est%C3%A1dio_das_R%C3%A3s.jpg/640px-Est%C3%A1dio_das_R%C3%A3s.jpg"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/6/67/Est%C3%A1dio_das_R%C3%A3s.jpg/640px-Est%C3%A1dio_das_R%C3%A3s.jpg"
   },
   {
     "id": "sydney-harbour-arena",
@@ -590,7 +606,6 @@
     "blueprintUrl": "/assets/liquipedia/maps/sydney-harbour-arena.png",
     "sourceUrl": "https://liquipedia.net/overwatch/Sydney_Harbour_Arena",
     "license": "Source: Liquipedia Overwatch Portal:Maps. See source page and file metadata for licensing.",
-    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/5/57/Sydney-Harbour-Arena.png/640px-Sydney-Harbour-Arena.png",
-    "remoteBlueprintUrl": "https://liquipedia.net/commons/images/thumb/5/57/Sydney-Harbour-Arena.png/640px-Sydney-Harbour-Arena.png"
+    "remoteImageUrl": "https://liquipedia.net/commons/images/thumb/5/57/Sydney-Harbour-Arena.png/640px-Sydney-Harbour-Arena.png"
   }
 ]

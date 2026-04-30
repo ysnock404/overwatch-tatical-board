@@ -10,8 +10,7 @@ import { assetUrl } from "@/lib/assets";
 import { useBoardStore } from "@/lib/board-store";
 import type { GameMap, HeroObject } from "@/lib/types";
 
-const boardWidth = 1600;
-const boardHeight = 1000;
+const fallbackBoard = { width: 1600, height: 1000 };
 const teamColors = {
   blue: "#0369a1",
   red: "#be123c",
@@ -37,6 +36,15 @@ export function TacticalBoard({ map }: { map: GameMap }) {
   const setSelectedId = useBoardStore((state) => state.setSelectedId);
   const addObject = useBoardStore((state) => state.addObject);
   const updateObject = useBoardStore((state) => state.updateObject);
+  const boardSize = useMemo(() => {
+    if (!mapImage) return fallbackBoard;
+    const maxWidth = 1800;
+    const scale = Math.min(1, maxWidth / mapImage.naturalWidth);
+    return {
+      width: Math.round(mapImage.naturalWidth * scale),
+      height: Math.round(mapImage.naturalHeight * scale),
+    };
+  }, [mapImage]);
 
   useEffect(() => {
     const element = wrapperRef.current;
@@ -225,9 +233,9 @@ export function TacticalBoard({ map }: { map: GameMap }) {
         onMouseLeave={handleMouseUp}
       >
         <Layer listening={false}>
-          <Rect x={0} y={0} width={boardWidth} height={boardHeight} fill="#18181b" />
-          {mapImage ? <KonvaImage image={mapImage} x={0} y={0} width={boardWidth} height={boardHeight} /> : null}
-          <BoardGrid />
+          <Rect x={0} y={0} width={boardSize.width} height={boardSize.height} fill="#18181b" />
+          {mapImage ? <KonvaImage image={mapImage} x={0} y={0} width={boardSize.width} height={boardSize.height} /> : null}
+          <BoardGrid width={boardSize.width} height={boardSize.height} />
         </Layer>
         <Layer>
           {objects.filter((object) => object.type === "zone").map((object) => (
@@ -339,13 +347,13 @@ function HeroToken({
   );
 }
 
-function BoardGrid() {
+function BoardGrid({ width, height }: { width: number; height: number }) {
   const lines = [];
-  for (let x = 0; x <= boardWidth; x += 100) {
-    lines.push(<Line key={`v-${x}`} points={[x, 0, x, boardHeight]} stroke="rgba(255,255,255,0.12)" strokeWidth={1} />);
+  for (let x = 0; x <= width; x += 100) {
+    lines.push(<Line key={`v-${x}`} points={[x, 0, x, height]} stroke="rgba(255,255,255,0.12)" strokeWidth={1} />);
   }
-  for (let y = 0; y <= boardHeight; y += 100) {
-    lines.push(<Line key={`h-${y}`} points={[0, y, boardWidth, y]} stroke="rgba(255,255,255,0.12)" strokeWidth={1} />);
+  for (let y = 0; y <= height; y += 100) {
+    lines.push(<Line key={`h-${y}`} points={[0, y, width, y]} stroke="rgba(255,255,255,0.12)" strokeWidth={1} />);
   }
   return <>{lines}</>;
 }
