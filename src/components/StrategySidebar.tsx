@@ -1,10 +1,10 @@
 "use client";
 
-import { DownloadSimple, FileArrowUp, Plus } from "@phosphor-icons/react";
+import { DownloadSimple, FileArrowUp, Plus, Trash } from "@phosphor-icons/react";
 import { useRef, useState } from "react";
 import { createEmptyStrategy, useBoardStore } from "@/lib/board-store";
 import type { Strategy } from "@/lib/types";
-import { loadStrategies, saveStrategyToStorage } from "./BoardEditor";
+import { loadStrategies, saveStrategyToStorage, storageKey } from "./BoardEditor";
 
 export function StrategySidebar({ mapId }: { mapId: string }) {
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -23,6 +23,15 @@ export function StrategySidebar({ mapId }: { mapId: string }) {
 
   const newStrategy = () => {
     setStrategy(createEmptyStrategy(mapId, "New strategy"));
+  };
+
+  const deleteCurrent = () => {
+    if (!strategy) return;
+
+    const nextSaved = loadStrategies(mapId).filter((item) => item.id !== strategy.id);
+    localStorage.setItem(storageKey(mapId), JSON.stringify(nextSaved));
+    setSaved(nextSaved);
+    setStrategy(nextSaved[0] ?? createEmptyStrategy(mapId, "New strategy"));
   };
 
   const exportJson = () => {
@@ -74,6 +83,10 @@ export function StrategySidebar({ mapId }: { mapId: string }) {
         <button onClick={() => inputRef.current?.click()} className="rounded-md border border-zinc-300 px-3 py-2 text-sm font-semibold">
           <FileArrowUp className="mr-2 inline" size={16} weight="bold" />
           Import
+        </button>
+        <button onClick={deleteCurrent} className="rounded-md border border-rose-200 px-3 py-2 text-sm font-semibold text-rose-700 hover:border-rose-400">
+          <Trash className="mr-2 inline" size={16} weight="bold" />
+          Delete
         </button>
       </div>
       <input ref={inputRef} type="file" accept="application/json" className="hidden" onChange={(event) => importJson(event.target.files?.[0])} />
