@@ -39,3 +39,46 @@ a:active {
 * {
   box-sizing: border-box;
 }
+
+.home-map-reel {
+  mask-image: linear-gradient(to bottom, transparent 0, #000 9%, #000 91%, transparent 100%);
+}
+
+.home-map-track {
+  animation: home-map-scroll 46s linear infinite;
+}
+
+.home-map-reel:hover .home-map-track {
+  animation-play-state: paused;
+}
+
+.home-map-card {
+  animation: home-map-card-in 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes home-map-scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes home-map-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-map-track,
+  .home-map-card {
+    animation: none;
+  }
+}

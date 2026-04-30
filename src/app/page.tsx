@@ -5,9 +5,11 @@ import { maps, heroes } from "@/lib/mock-data";
 import { assetUrl } from "@/lib/assets";
 
 export default function Home() {
+  const animatedMaps = [...maps, ...maps];
+
   return (
     <AppShell>
-      <main className="mx-auto grid min-h-[calc(100dvh-73px)] max-w-[1440px] grid-cols-1 gap-8 px-5 py-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <main className="mx-auto grid min-h-[calc(100dvh-73px)] max-w-[1440px] grid-cols-1 gap-8 px-5 py-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <section className="max-w-3xl">
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
             Strategy workspace
@@ -28,20 +30,29 @@ export default function Home() {
           </div>
         </section>
         <section className="grid gap-4 lg:pl-8">
-          <div className="border border-zinc-200 bg-white p-5 shadow-[0_18px_45px_-30px_rgba(24,24,27,0.45)]">
+          <div className="border border-zinc-200 bg-white p-4 shadow-[0_18px_45px_-30px_rgba(24,24,27,0.45)]">
             <div className="flex items-center justify-between border-b border-zinc-200 pb-4">
               <span className="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">Liquipedia data</span>
               <span className="text-sm text-zinc-500">{heroes.length} heroes / {maps.length} maps</span>
             </div>
-            <div className="mt-5 grid grid-cols-2 gap-3">
-              {maps.map((map) => (
-                <Link key={map.id} href={`/board/${map.id}`} className="group border border-zinc-200 bg-zinc-50 p-4 hover:border-zinc-400">
-                  <div className="aspect-[4/3] overflow-hidden bg-white">
-                    <img src={assetUrl(map.imageUrl)} alt="" className="h-full w-full object-cover" />
-                  </div>
-                  <div className="mt-3 text-sm font-semibold group-hover:text-zinc-600">{map.name}</div>
-                </Link>
-              ))}
+            <div className="home-map-reel mt-4 h-[520px] overflow-hidden md:h-[620px] lg:h-[calc(100dvh-190px)]">
+              <div className="home-map-track grid grid-cols-2 gap-3 pb-3">
+                {animatedMaps.map((map, index) => (
+                  <Link
+                    key={`${map.id}-${index}`}
+                    href={`/board/${map.id}`}
+                    aria-hidden={index >= maps.length}
+                    tabIndex={index >= maps.length ? -1 : 0}
+                    className="home-map-card group border border-zinc-200 bg-zinc-50 p-3 hover:border-zinc-400"
+                    style={{ animationDelay: `${(index % 12) * 70}ms` }}
+                  >
+                    <div className="aspect-[16/9] overflow-hidden bg-white">
+                      <img src={assetUrl(map.imageUrl)} alt="" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                    </div>
+                    <div className="mt-2 truncate text-sm font-semibold group-hover:text-zinc-600">{map.name}</div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
