@@ -82,18 +82,18 @@ export default function BoardEditor({ map }: { map: GameMap }) {
   return (
     <AppShell>
       <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd} onDragCancel={() => setActiveHeroId(null)}>
-        <main className="grid min-h-[calc(100dvh-73px)] grid-cols-1 bg-zinc-100 lg:grid-cols-[280px_minmax(0,1fr)_320px]">
-          <aside className="border-r border-zinc-200 bg-white">
+        <main className="grid h-[calc(100dvh-73px)] min-h-0 grid-cols-1 overflow-hidden bg-zinc-100 lg:grid-cols-[280px_minmax(0,1fr)_320px]">
+          <aside className="min-h-0 border-r border-zinc-200 bg-white">
             <HeroTray onPickHero={handlePickHero} />
           </aside>
-          <section className="min-w-0">
+          <section className="min-h-0 min-w-0">
             <ToolBar />
             <div ref={boardRef} className="h-[calc(100dvh-191px)] min-h-[520px] overflow-hidden bg-zinc-900">
               {strategy ? <TacticalBoard map={map} /> : null}
             </div>
             <BoardActionBar />
           </section>
-          <aside className="border-l border-zinc-200 bg-white">
+          <aside className="min-h-0 overflow-y-auto border-l border-zinc-200 bg-white">
             <StrategySidebar mapId={map.id} />
             <LayerPanel />
           </aside>

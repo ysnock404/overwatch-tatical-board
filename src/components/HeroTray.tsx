@@ -13,14 +13,29 @@ const roles: Array<HeroRole | "all"> = ["all", "tank", "damage", "support"];
 
 export function HeroTray({ onPickHero }: { onPickHero: (heroId: string) => void }) {
   const [role, setRole] = useState<HeroRole | "all">("all");
+  const [query, setQuery] = useState("");
   const team = useBoardStore((state) => state.team);
   const setTeam = useBoardStore((state) => state.setTeam);
-  const filtered = useMemo(() => heroes.filter((hero) => role === "all" || hero.role === role), [role]);
+  const filtered = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase();
+    return heroes.filter((hero) => {
+      const matchesRole = role === "all" || hero.role === role;
+      const matchesQuery = normalizedQuery.length === 0 || hero.name.toLowerCase().includes(normalizedQuery);
+      return matchesRole && matchesQuery;
+    });
+  }, [query, role]);
 
   return (
-    <div className="flex h-full flex-col">
-      <div className="border-b border-zinc-200 p-4">
+    <div className="flex h-full min-h-0 flex-col">
+      <div className="shrink-0 border-b border-zinc-200 p-4">
         <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">Hero tray</p>
+        <input
+          type="search"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Search hero"
+          className="mt-4 h-10 w-full rounded-md border border-zinc-300 bg-white px-3 text-sm font-semibold text-zinc-900 outline-none placeholder:text-zinc-400 focus:border-zinc-950"
+        />
         <div className="mt-4 grid grid-cols-2 gap-2">
           {roles.map((item) => (
             <button
@@ -43,10 +58,11 @@ export function HeroTray({ onPickHero }: { onPickHero: (heroId: string) => void 
           {team === "blue" ? "Blue team" : "Red team"}
         </button>
       </div>
-      <div className="grid flex-1 auto-rows-max grid-cols-2 gap-3 overflow-y-auto p-4">
+      <div className="grid min-h-0 flex-1 auto-rows-max grid-cols-2 gap-3 overflow-y-auto overscroll-contain p-4">
         {filtered.map((hero) => (
           <DraggableHero key={hero.id} hero={hero} onPickHero={onPickHero} />
         ))}
+        {filtered.length === 0 ? <p className="col-span-2 text-sm text-zinc-500">No heroes found.</p> : null}
       </div>
     </div>
   );
