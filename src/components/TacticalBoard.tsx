@@ -32,6 +32,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
   const team = useBoardStore((state) => state.team);
   const drawingColor = useBoardStore((state) => state.drawingColor);
   const strokeWidth = useBoardStore((state) => state.strokeWidth);
+  const heroTokenSize = useBoardStore((state) => state.heroTokenSize);
   const snapToGrid = useBoardStore((state) => state.snapToGrid);
   const showGrid = useBoardStore((state) => state.showGrid);
   const stageScale = useBoardStore((state) => state.stageScale);
@@ -326,6 +327,7 @@ export function TacticalBoard({ map }: { map: GameMap }) {
               key={object.id}
               object={object}
               selected={selectedId === object.id}
+              size={heroTokenSize}
               onSelect={() => setSelectedId(object.id)}
               snapPoint={snapPoint}
               onMove={(x, y) => updateObject(object.id, { x, y })}
@@ -353,12 +355,14 @@ export function TacticalBoard({ map }: { map: GameMap }) {
 function HeroToken({
   object,
   selected,
+  size,
   onSelect,
   onMove,
   snapPoint,
 }: {
   object: HeroObject;
   selected: boolean;
+  size: number;
   onSelect: () => void;
   onMove: (x: number, y: number) => void;
   snapPoint: (point: { x: number; y: number }) => { x: number; y: number };
@@ -366,6 +370,13 @@ function HeroToken({
   const hero = useMemo(() => heroes.find((item) => item.id === object.heroId), [object.heroId]);
   const [image] = useCanvasImage(assetUrl(hero?.iconUrl ?? hero?.portraitUrl));
   const border = teamColors[object.team];
+  const radius = size / 2;
+  const imageSize = Math.max(24, size - 12);
+  const imageOffset = imageSize / 2;
+  const badgeHeight = Math.max(14, Math.round(size * 0.29));
+  const badgeWidth = Math.max(48, Math.round(size * 0.97));
+  const badgeY = radius - 3;
+  const roleFontSize = Math.max(8, Math.round(size * 0.16));
 
   if (!hero) return null;
 
@@ -383,10 +394,19 @@ function HeroToken({
       }}
       rotation={object.rotation ?? 0}
     >
-      <Circle radius={34} fill="#ffffff" stroke={selected ? "#facc15" : border} strokeWidth={selected ? 6 : 4} />
-      {image ? <KonvaImage image={image} x={-28} y={-28} width={56} height={56} cornerRadius={28} /> : null}
-      <Rect x={-33} y={31} width={66} height={20} fill={border} cornerRadius={4} />
-      <KonvaText x={-33} y={34} width={66} text={roleLabels[hero.role]} align="center" fill="#ffffff" fontSize={11} fontStyle="700" />
+      <Circle radius={radius} fill="#ffffff" stroke={selected ? "#facc15" : border} strokeWidth={selected ? 6 : 4} />
+      {image ? <KonvaImage image={image} x={-imageOffset} y={-imageOffset} width={imageSize} height={imageSize} cornerRadius={imageOffset} /> : null}
+      <Rect x={-badgeWidth / 2} y={badgeY} width={badgeWidth} height={badgeHeight} fill={border} cornerRadius={4} />
+      <KonvaText
+        x={-badgeWidth / 2}
+        y={badgeY + Math.max(2, Math.round(badgeHeight * 0.18))}
+        width={badgeWidth}
+        text={roleLabels[hero.role]}
+        align="center"
+        fill="#ffffff"
+        fontSize={roleFontSize}
+        fontStyle="700"
+      />
     </Group>
   );
 }

@@ -30,6 +30,11 @@ const tools: Array<{ id: Tool; label: string; icon: typeof Cursor }> = [
 
 const colors = ["#0284c7", "#e11d48", "#f59e0b", "#16a34a", "#f4f4f5"];
 const widths = [3, 5, 8, 12];
+const tokenSizes = [
+  { label: "S", value: 42 },
+  { label: "M", value: 56 },
+  { label: "L", value: 68 },
+];
 
 export function ToolBar() {
   const tool = useBoardStore((state) => state.tool);
@@ -37,12 +42,14 @@ export function ToolBar() {
   const strategy = useBoardStore((state) => state.strategy);
   const drawingColor = useBoardStore((state) => state.drawingColor);
   const strokeWidth = useBoardStore((state) => state.strokeWidth);
+  const heroTokenSize = useBoardStore((state) => state.heroTokenSize);
   const snapToGrid = useBoardStore((state) => state.snapToGrid);
   const showGrid = useBoardStore((state) => state.showGrid);
   const setTool = useBoardStore((state) => state.setTool);
   const setTeam = useBoardStore((state) => state.setTeam);
   const setDrawingColor = useBoardStore((state) => state.setDrawingColor);
   const setStrokeWidth = useBoardStore((state) => state.setStrokeWidth);
+  const setHeroTokenSize = useBoardStore((state) => state.setHeroTokenSize);
   const setSnapToGrid = useBoardStore((state) => state.setSnapToGrid);
   const setShowGrid = useBoardStore((state) => state.setShowGrid);
   const deleteSelected = useBoardStore((state) => state.deleteSelected);
@@ -102,6 +109,19 @@ export function ToolBar() {
             </option>
           ))}
         </select>
+        <div className="flex items-center gap-1 rounded-md border border-zinc-200 bg-white p-1" title="Hero token size">
+          {tokenSizes.map((size) => (
+            <button
+              key={size.value}
+              onClick={() => setHeroTokenSize(size.value)}
+              className={`h-8 min-w-8 rounded px-2 text-xs font-bold ${
+                heroTokenSize === size.value ? "bg-zinc-950 text-white" : "text-zinc-600 hover:bg-zinc-100"
+              }`}
+            >
+              {size.label}
+            </button>
+          ))}
+        </div>
         <IconButton label={snapToGrid ? "Disable snap" : "Enable snap"} onClick={() => setSnapToGrid(!snapToGrid)} icon={Magnet} active={snapToGrid} />
         <IconButton label={showGrid ? "Hide grid" : "Show grid"} onClick={() => setShowGrid(!showGrid)} icon={SquaresFour} active={showGrid} />
       </div>

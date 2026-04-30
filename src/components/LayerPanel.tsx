@@ -83,6 +83,8 @@ function HeroProperties({
   onUpdate: (patch: Partial<BoardObject>) => void;
 }) {
   const hero = heroes.find((item) => item.id === object.heroId);
+  const heroTokenSize = useBoardStore((state) => state.heroTokenSize);
+  const setHeroTokenSize = useBoardStore((state) => state.setHeroTokenSize);
   return (
     <div className="space-y-3">
       <p className="text-sm font-semibold">{hero?.name ?? object.heroId}</p>
@@ -91,6 +93,7 @@ function HeroProperties({
         <option value="red">Red</option>
       </SelectField>
       <NumberField label="Rotation" value={object.rotation ?? 0} min={-180} max={180} step={15} onChange={(rotation) => onUpdate({ rotation })} />
+      <NumberField label="Token size" value={heroTokenSize} min={36} max={82} step={2} onChange={setHeroTokenSize} />
     </div>
   );
 }

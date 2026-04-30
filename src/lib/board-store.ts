@@ -13,6 +13,7 @@ type BoardState = {
   stageY: number;
   drawingColor: string;
   strokeWidth: number;
+  heroTokenSize: number;
   snapToGrid: boolean;
   showGrid: boolean;
   history: BoardObject[][];
@@ -25,6 +26,7 @@ type BoardState = {
   setView: (view: { x: number; y: number; scale: number }) => void;
   setDrawingColor: (color: string) => void;
   setStrokeWidth: (width: number) => void;
+  setHeroTokenSize: (size: number) => void;
   setSnapToGrid: (enabled: boolean) => void;
   setShowGrid: (enabled: boolean) => void;
   resetView: () => void;
@@ -53,6 +55,7 @@ export const useBoardStore = create<BoardState>((set, get) => ({
   stageY: 0,
   drawingColor: "#0284c7",
   strokeWidth: 5,
+  heroTokenSize: 68,
   snapToGrid: false,
   showGrid: true,
   history: [],
@@ -78,6 +81,7 @@ export const useBoardStore = create<BoardState>((set, get) => ({
   setView: ({ x, y, scale }) => set({ stageX: x, stageY: y, stageScale: scale }),
   setDrawingColor: (drawingColor) => set({ drawingColor }),
   setStrokeWidth: (strokeWidth) => set({ strokeWidth }),
+  setHeroTokenSize: (heroTokenSize) => set({ heroTokenSize }),
   setSnapToGrid: (snapToGrid) => set({ snapToGrid }),
   setShowGrid: (showGrid) => set({ showGrid }),
   resetView: () => set({ stageX: 0, stageY: 0, stageScale: 1 }),
