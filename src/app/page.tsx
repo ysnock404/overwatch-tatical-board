@@ -6,6 +6,7 @@ import { assetUrl } from "@/lib/assets";
 
 export default function Home() {
   const animatedMaps = [...maps, ...maps];
+  const defaultMap = maps.find((map) => map.id === "kings-row") ?? maps[0];
 
   return (
     <AppShell>
@@ -24,7 +25,7 @@ export default function Home() {
             <Link href="/maps" className="rounded-md bg-zinc-950 px-5 py-3 text-sm font-semibold text-white hover:bg-zinc-800">
               Open maps
             </Link>
-            <Link href={`/board/${maps[0].id}`} className="rounded-md border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-900 hover:border-zinc-400">
+            <Link href={`/board/${defaultMap.id}`} className="rounded-md border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-900 hover:border-zinc-400">
               Start board
             </Link>
           </div>
