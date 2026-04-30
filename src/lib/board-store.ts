@@ -3,6 +3,22 @@
 import { create } from "zustand";
 import type { BoardObject, Strategy, Team, Tool } from "./types";
 
+const boardPrefsCookie = "owtb_board_prefs";
+const cookieMaxAge = 60 * 60 * 24 * 365;
+
+type BoardPrefs = {
+  tool: Tool;
+  team: Team;
+  stageScale: number;
+  stageX: number;
+  stageY: number;
+  drawingColor: string;
+  strokeWidth: number;
+  heroTokenSize: number;
+  showHeroRoles: boolean;
+  showGrid: boolean;
+};
+
 type BoardState = {
   strategy: Strategy | null;
   selectedId: string | null;
@@ -46,9 +62,7 @@ const stamp = (strategy: Strategy): Strategy => ({
   updatedAt: new Date().toISOString(),
 });
 
-export const useBoardStore = create<BoardState>((set, get) => ({
-  strategy: null,
-  selectedId: null,
+const defaultPrefs: BoardPrefs = {
   tool: "select",
   team: "blue",
   stageScale: 1,
@@ -59,6 +73,80 @@ export const useBoardStore = create<BoardState>((set, get) => ({
   heroTokenSize: 56,
   showHeroRoles: true,
   showGrid: true,
+};
+
+const isTool = (value: unknown): value is Tool => value === "select" || value === "arrow" || value === "zone" || value === "text";
+const isTeam = (value: unknown): value is Team => value === "blue" || value === "red";
+
+const finiteNumber = (value: unknown, fallback: number) => (typeof value === "number" && Number.isFinite(value) ? value : fallback);
+const booleanValue = (value: unknown, fallback: boolean) => (typeof value === "boolean" ? value : fallback);
+
+const readBoardPrefs = (): BoardPrefs => {
+  if (typeof document === "undefined") return defaultPrefs;
+
+  const raw = document.cookie
+    .split("; ")
+    .find((item) => item.startsWith(`${boardPrefsCookie}=`))
+    ?.split("=")[1];
+
+  if (!raw) return defaultPrefs;
+
+  try {
+    const parsed = JSON.parse(decodeURIComponent(raw)) as Partial<BoardPrefs>;
+    return {
+      tool: isTool(parsed.tool) ? parsed.tool : defaultPrefs.tool,
+      team: isTeam(parsed.team) ? parsed.team : defaultPrefs.team,
+      stageScale: finiteNumber(parsed.stageScale, defaultPrefs.stageScale),
+      stageX: finiteNumber(parsed.stageX, defaultPrefs.stageX),
+      stageY: finiteNumber(parsed.stageY, defaultPrefs.stageY),
+      drawingColor: typeof parsed.drawingColor === "string" ? parsed.drawingColor : defaultPrefs.drawingColor,
+      strokeWidth: finiteNumber(parsed.strokeWidth, defaultPrefs.strokeWidth),
+      heroTokenSize: finiteNumber(parsed.heroTokenSize, defaultPrefs.heroTokenSize),
+      showHeroRoles: booleanValue(parsed.showHeroRoles, defaultPrefs.showHeroRoles),
+      showGrid: booleanValue(parsed.showGrid, defaultPrefs.showGrid),
+    };
+  } catch {
+    return defaultPrefs;
+  }
+};
+
+const boardPrefsFromState = (state: BoardState): BoardPrefs => ({
+  tool: state.tool,
+  team: state.team,
+  stageScale: state.stageScale,
+  stageX: state.stageX,
+  stageY: state.stageY,
+  drawingColor: state.drawingColor,
+  strokeWidth: state.strokeWidth,
+  heroTokenSize: state.heroTokenSize,
+  showHeroRoles: state.showHeroRoles,
+  showGrid: state.showGrid,
+});
+
+const writeBoardPrefs = (prefs: BoardPrefs) => {
+  if (typeof document === "undefined") return;
+  document.cookie = `${boardPrefsCookie}=${encodeURIComponent(JSON.stringify(prefs))}; path=/; max-age=${cookieMaxAge}; SameSite=Lax`;
+};
+
+const persistBoardPrefs = (state: BoardState, patch: Partial<BoardPrefs>) => {
+  writeBoardPrefs({ ...boardPrefsFromState(state), ...patch });
+};
+
+const initialPrefs = readBoardPrefs();
+
+export const useBoardStore = create<BoardState>((set, get) => ({
+  strategy: null,
+  selectedId: null,
+  tool: initialPrefs.tool,
+  team: initialPrefs.team,
+  stageScale: initialPrefs.stageScale,
+  stageX: initialPrefs.stageX,
+  stageY: initialPrefs.stageY,
+  drawingColor: initialPrefs.drawingColor,
+  strokeWidth: initialPrefs.strokeWidth,
+  heroTokenSize: initialPrefs.heroTokenSize,
+  showHeroRoles: initialPrefs.showHeroRoles,
+  showGrid: initialPrefs.showGrid,
   history: [],
   future: [],
   setStrategy: (strategy) =>
@@ -67,25 +155,48 @@ export const useBoardStore = create<BoardState>((set, get) => ({
       selectedId: null,
       history: [],
       future: [],
-      tool: "select",
-      stageScale: 1,
-      stageX: 0,
-      stageY: 0,
     }),
   renameStrategy: (name) =>
     set((state) =>
       state.strategy ? { strategy: stamp({ ...state.strategy, name }) } : state,
     ),
-  setTool: (tool) => set({ tool, selectedId: tool === "select" ? get().selectedId : null }),
-  setTeam: (team) => set({ team }),
+  setTool: (tool) => {
+    persistBoardPrefs(get(), { tool });
+    set({ tool, selectedId: tool === "select" ? get().selectedId : null });
+  },
+  setTeam: (team) => {
+    persistBoardPrefs(get(), { team });
+    set({ team });
+  },
   setSelectedId: (selectedId) => set({ selectedId }),
-  setView: ({ x, y, scale }) => set({ stageX: x, stageY: y, stageScale: scale }),
-  setDrawingColor: (drawingColor) => set({ drawingColor }),
-  setStrokeWidth: (strokeWidth) => set({ strokeWidth }),
-  setHeroTokenSize: (heroTokenSize) => set({ heroTokenSize }),
-  setShowHeroRoles: (showHeroRoles) => set({ showHeroRoles }),
-  setShowGrid: (showGrid) => set({ showGrid }),
-  resetView: () => set({ stageX: 0, stageY: 0, stageScale: 1 }),
+  setView: ({ x, y, scale }) => {
+    persistBoardPrefs(get(), { stageX: x, stageY: y, stageScale: scale });
+    set({ stageX: x, stageY: y, stageScale: scale });
+  },
+  setDrawingColor: (drawingColor) => {
+    persistBoardPrefs(get(), { drawingColor });
+    set({ drawingColor });
+  },
+  setStrokeWidth: (strokeWidth) => {
+    persistBoardPrefs(get(), { strokeWidth });
+    set({ strokeWidth });
+  },
+  setHeroTokenSize: (heroTokenSize) => {
+    persistBoardPrefs(get(), { heroTokenSize });
+    set({ heroTokenSize });
+  },
+  setShowHeroRoles: (showHeroRoles) => {
+    persistBoardPrefs(get(), { showHeroRoles });
+    set({ showHeroRoles });
+  },
+  setShowGrid: (showGrid) => {
+    persistBoardPrefs(get(), { showGrid });
+    set({ showGrid });
+  },
+  resetView: () => {
+    persistBoardPrefs(get(), { stageX: 0, stageY: 0, stageScale: 1 });
+    set({ stageX: 0, stageY: 0, stageScale: 1 });
+  },
   addObject: (object) =>
     set((state) => {
       if (!state.strategy) return state;
